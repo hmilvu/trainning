@@ -1,0 +1,132 @@
+<form id="pagerForm" method="post" action="demo_page1.html">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="w_removeSelected.html" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+				<td class="dateRange">
+					发送日期：
+					<input type="text" value="" readonly="readonly" class="date" name="dateStart">
+					<span class="limit">-</span>
+					<input type="text" value="" readonly="readonly" class="date" name="dateEnd">
+				</td>
+			</td>
+			<td>
+				<label>设备类型：</label>
+				<select class="combox" name="province">		
+					<option value="">全部</option>							
+					<option value="1">IOS</option>
+					<option value="2">Android</option>
+				</select>
+				</td>
+				<td>
+				<label>频道：</label>
+				<select class="combox" name="province">		
+					<option value="">全部</option>							
+					<option value="1">iPhone Chanel V1.0</option>
+					<option value="2">iPhone Chanel V1.1</option>
+					<option value="3">iPhone Chanel V1.2</option>
+					<option value="4">Android Channel V1.0</option>
+					<option value="5">Android Channel V1.1</option>
+					<option value="6">Android Channel V1.2</option>
+				</select>
+				</td>
+			</tr>
+		</table>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="demo_page4.html" target="navTab"><span>发送消息</span></a></li>
+			<li class="line">line</li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="3%" align="left"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="5%" align="left">消息ID</th>
+				<th width="15%" align="left">消息标题</th>
+				<th align="left">消息内容</th>
+				<th width="10%"  align="left">发送设备</th>
+				<th width="15%" align="left">发送Channel</th>
+				<th width="10%" align="left">数量(成功数/总数)</th>
+				<th width="13%" align="left">发送时间</th>
+				<th width="5%" align="left">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>12</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">主页培训师在线回答</a></td>
+				<td>主页培训师在线回答</td>
+				<td>IOS</td>
+				<td>iPhone Channel V1.1</td>
+				<td>2600 / 2762</td>
+				<td>2014-6-23 12:30:00</td>
+				<td>					
+				</td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>11</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">主页培训师在线回答</a></td>
+				<td>主页培训师在线回答</td>
+				<td>Android</td>
+				<td>Android Channel V1.1</td>
+				<td>2700 / 2762</td>
+				<td>2014-6-23 12:30:00</td>
+				<td>					
+				</td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>9</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">欢迎提问</a></td>
+				<td>提问有奖</td>
+				<td>IOS</td>
+				<td>iPhone Channel V1.0</td>
+				<td>2600 / 2762</td>
+				<td>2014-6-23 12:30:00</td>
+				<td>					
+				</td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>10</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">欢迎提问</a></td>
+				<td>提问有奖</td>
+				<td>Android</td>
+				<td>Android Channel V1.0</td>
+				<td>2700 / 2762</td>
+				<td>2014-6-23 12:30:00</td>
+				<td>					
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共3503条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+
+	</div>
+</div>

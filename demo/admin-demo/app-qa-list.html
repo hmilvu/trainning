@@ -1,0 +1,74 @@
+<form id="pagerForm" method="post" action="demo_page1.html">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<div class="button"><div class="buttonContent"><button>刷新</button></div></div>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="76">
+		<thead>
+			<tr>
+				<th width="80" align="left">用户昵称</th>
+				<th width="80" align="left">动作</th>
+				<th align="left">问题</th>
+				<th align="left">答案</th>
+				<th width="60" align="left">点赞数</th>
+				<th width="80" align="left">关注</th>
+				<th width="140" align="left">时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="1">
+				<td>Alex</td>				
+				<td>提问</td>
+				<td>轻度扭伤如何快速处理？</td>
+				<td></td>
+				<td></td>
+				<td>是</td>
+				<td>2014-06-06 19:30:40</td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td>Steven</td>				
+				<td>回答</td>
+				<td>怎样提高弹速？</td>
+				<td>1.天生的；2.多锻炼</td>
+				<td>20</td>
+				<td></td>
+				<td>2014-06-06 19:30:40</td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td>小白</td>				
+				<td>回答</td>
+				<td>轻度扭伤如何快速处理？</td>
+				<td>云南白药喷雾剂不错</td>
+				<td>2</td>
+				<td></td>
+				<td>2014-06-06 19:30:40</td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td>兰轻松</td>				
+				<td>提问</td>
+				<td>怎么单脚起跳？求赐教。</td>
+				<td></td>
+				<td></td>
+				<td>是</td>
+				<td>2014-06-06 19:30:40</td>
+			</tr>			
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共3503条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+
+	</div>
+</div>

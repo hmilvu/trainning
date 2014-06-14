@@ -1,0 +1,97 @@
+<form id="pagerForm" method="post" action="demo_page1.html">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="w_removeSelected.html" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+				<label>问题标题：</label>
+				<input type="text" name="keywords" value=""/>
+			</td>
+			<td>
+				<label>问题内容：</label>
+				<input type="text" name="keywords" value=""/>
+			</td>
+			<td>
+				<label>话题：</label>
+				<input type="text" name="keywords" value=""/>
+			</td>
+			<td>
+				<label>状态：</label>
+				<select class="combox" name="province">		
+					<option value="">全部</option>							
+					<option value="1" selected>未处理</option>
+					<option value="2">已处理</option>
+				</select>
+				</td>
+			</tr>
+		</table>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a title="确实要标记这些问题为已处理吗?" target="selectedTodo" rel="ids" href="demo/common/ajaxDone.html" class="edit"><span>批量标记已处理</span></a></li>
+			<li class="line">line</li>
+			<li><a title="确实要删除这些问题及回答吗?" target="selectedTodo" rel="ids" href="demo/common/ajaxDone.html" class="delete"><span>批量删除</span></a></li>
+			<li class="line">line</li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="3%" align="left"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="5%" align="left">问题ID</th>
+				<th align="left">问题标题</th>
+				<th width="5%"  align="left">答案数量</th>
+				<th width="10%" align="left">所属话题</th>
+				<th width="8%" align="left">创建用户ID</th>
+				<th width="12%" align="left">创建时间</th>
+				<th width="8%" align="left">举报用户ID</th>
+				<th width="12%" align="left">举报时间</th>
+				<th width="15%" align="left">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>9</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">轻度扭伤如何快速处理？</a></td>
+				<td>20</td>
+				<td>伤病, 恢复</td>
+				<td><a href="admin/account!edit.action?uid=<s:property value='%{#item.id}'/>" target="navTab" title="Edit Account" style="color:#00F;text-decoration:underline;">128</a></td>
+				<td>2014-06-06 19:30:40</td>
+				<td><a href="admin/account!edit.action?uid=<s:property value='%{#item.id}'/>" target="navTab" title="Edit Account" style="color:#00F;text-decoration:underline;">911</a></td>
+				<td>2014-07-06 19:30:40</td>
+				<td>					
+				  <a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">编辑</a>	
+					&nbsp;&nbsp;
+				  <a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">答案列表</a>	
+					&nbsp;&nbsp;
+				  <a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">评论列表</a>	
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共3503条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+
+	</div>
+</div>

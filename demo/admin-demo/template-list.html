@@ -1,0 +1,72 @@
+<form id="pagerForm" method="post" action="demo_page1.html">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="demo_page4.html" target="navTab"><span>新增模板</span></a></li>
+			<li class="line">line</li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="3%" align="left"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="5%" align="left">用户ID</th>
+				<th align="left">登录名</th>
+				<th align="left">姓名</th>
+				<th align="left">角色</th>
+				<th width="15%" align="left">创建时间</th>
+				<th width="15%" align="left">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>9</td>
+				<td>xiaobai@163.com</td>
+				<td>编辑小白</td>
+				<td>编辑角色</td>
+				<td>2014-7-18 16:30:00</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">编辑</a>	
+					&nbsp;&nbsp;
+					<a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">删除</a>					  
+				  </td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>10</td>
+				<td>Alexdandan</td>
+				<td>张诚</td>
+				<td>产品经理角色</td>
+				<td>2014-7-18 16:30:00</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">编辑</a>	
+					&nbsp;&nbsp;
+					<a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">删除</a>					  
+				  </td>
+			</tr>	
+			<tr target="sid_user" rel="1">
+				<td><input name="ids" value="xxx" type="checkbox"></td>
+				<td>11</td>
+				<td>administrator</td>
+				<td>管理员</td>
+				<td>管理员角色</td>
+				<td>2014-7-18 16:30:00</td>
+				<td><a href="admin/deal!list.action?accountId=<s:property value='%{#item.id}'/>" target="navTab" title="View Deals" style="color:#00F;text-decoration:underline;">编辑</a>	
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共3503条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+
+	</div>
+</div>
