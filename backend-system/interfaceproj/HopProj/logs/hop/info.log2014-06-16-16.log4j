@@ -1,0 +1,16 @@
+2014.06.16 16:53:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 16:53:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 16:53:20 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.16 16:53:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.16 16:53:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 16:53:21 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{}
+2014.06.16 16:53:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 16:53:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 16:53:49 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.16 16:53:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.16 16:53:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 16:53:49 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"newsList":[{"newId":2},{}]}

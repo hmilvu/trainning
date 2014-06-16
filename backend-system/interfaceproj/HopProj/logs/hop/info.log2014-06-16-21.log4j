@@ -1,0 +1,4 @@
+2014.06.16 21:37:39 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性
+2014.06.16 21:37:39 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 21:37:40 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"topicList":[{"topicId":1,"followedNum":3,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]},{"topicId":2,"followedNum":6,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]}]}

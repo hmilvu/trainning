@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rop="http://www.bookegou.com/schema/rop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.bookegou.com/schema/rop http://www.bookegou.com/schema/rop/rop-1.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <!--① 扫描Spring Bean-->
+	<context:component-scan base-package="com.xtrainning.hop"/>
+    <!-- 启动Rop框架 -->
+    <rop:annotation-driven
+            session-manager="hopSessionManager"
+            app-secret-manager="appSecretManager"
+            service-access-controller="serviceAccessController"
+            formatting-conversion-service="conversionService"
+            ext-error-base-name="i18n/hopError"
+            service-timeout-seconds="30"
+            thread-ferry-class="com.xtrainning.hop.HopThreadFerry"
+            invoke-times-controller="invokeTimesController"
+            upload-file-max-size="2048"
+            upload-file-types="png,gif,jpg,jpeg,tmp"
+            core-pool-size="200"
+            max-pool-size="500"
+            queue-capacity="50"
+            keep-alive-seconds="60"
+            sign-enable="true"/>
+
+    <bean id="hopSessionManager" class="com.xtrainning.hop.HopSessionManager" />
+    <bean id="invokeTimesController" class="com.xtrainning.hop.HopInvokeTimesController"/>
+
+    <bean id="appSecretManager"
+          class="com.xtrainning.hop.HopAppSecretManager"/>
+
+    <bean id="serviceAccessController" class="com.xtrainning.hop.HopServiceAccessController"/>
+
+     <!--设置自定义的类型转换服务，注册自定义的类型转换器-->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <!--将yyyy-MM-dd hh:mi:ss格式的字符串转换为Date对象-->
+                <bean class="com.xtrainning.hop.converter.DateConverter"/>
+            </set>
+        </property>
+    </bean>
+    
+    <!--注册监听器，可配置多具-->
+    <rop:listeners>
+        <bean class="com.xtrainning.hop.HopPostInitializeEventListener"/>
+        <bean class="com.xtrainning.hop.HopPreDoServiceEventListener"/>
+        <bean class="com.xtrainning.hop.HopAfterDoServiceEventListener"/>
+    </rop:listeners>
+	<!-- <rop:interceptors>
+		<bean class="com.xtrainning.hop.interceptor.MemberAccessInterceptor"/>
+	</rop:interceptors> -->
+	<!-- 导入其他配置文件 -->
+<!-- 	<import resource="spring.xml"/> -->
+	
+</beans>

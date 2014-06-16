@@ -1,0 +1,36 @@
+2014.06.16 15:07:41 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:07:41 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:07:41 [main] WARN  [org.springframework.web.client.RestTemplate] - POST request for "http://localhost:8080/hop/service" resulted in 500 (Internal Server Error); invoking error handler
+2014.06.16 15:09:56 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:09:56 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:09:57 [main] WARN  [org.springframework.web.client.RestTemplate] - POST request for "http://localhost:8080/hop/service" resulted in 500 (Internal Server Error); invoking error handler
+2014.06.16 15:11:39 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:11:39 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:11:39 [main] WARN  [org.springframework.web.client.RestTemplate] - POST request for "http://localhost:8080/hop/service" resulted in 500 (Internal Server Error); invoking error handler
+2014.06.16 15:14:17 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:14:17 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:14:17 [main] WARN  [org.springframework.web.client.RestTemplate] - POST request for "http://localhost:8080/hop/service" resulted in 500 (Internal Server Error); invoking error handler
+2014.06.16 15:32:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:32:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:32:31 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"23","message":"无效的appKey参数","solution":"无效的appKey,请使用合法的appKey（由服务提供商授予你）"}
+2014.06.16 15:34:45 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:34:45 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:34:45 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"23","message":"无效的appKey参数","solution":"无效的appKey,请使用合法的appKey（由服务提供商授予你）"}
+2014.06.16 15:36:31 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:36:31 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:36:31 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"25","message":"无效签名","solution":"签名无效，请按正确的算法对请求数据进行签名:SHA1(<secret> <paramName1><paramValue><secret>),注意参数列表按字母顺序排列"}
+2014.06.16 15:40:37 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:40:37 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:40:37 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.16 15:46:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:46:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:46:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.16 15:51:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.16 15:51:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 15:51:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
