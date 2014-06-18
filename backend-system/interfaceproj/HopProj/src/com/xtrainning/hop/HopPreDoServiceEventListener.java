@@ -4,6 +4,8 @@
  */
 package com.xtrainning.hop;
 
+import java.sql.Timestamp;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ import com.rop.RopRequestContext;
 import com.rop.event.PreDoServiceEvent;
 import com.rop.event.RopEventListener;
 import com.rop.marshaller.MessageMarshallerUtils;
+import com.xtrainning.hop.common.Constants.ACCESS_LOG_TYPE;
+import com.xtrainning.hop.entity.AccessLog;
 import com.xtrainning.hop.resolver.AccessLogResolver;
 
 /**
@@ -35,7 +39,7 @@ public class HopPreDoServiceEventListener implements RopEventListener<PreDoServi
             RopRequest ropRequest = ropRequestContext.getRopRequest();
             String message = MessageMarshallerUtils.getMessage(ropRequest, MessageFormat.json);
             log.info("request:" + message);
-           /* AccessLog accessLog = new AccessLog();
+            AccessLog accessLog = new AccessLog();
             accessLog.setAppkey(ropRequestContext.getAppKey());
             accessLog.setIp(ropRequestContext.getIp());
             accessLog.setMethod(ropRequestContext.getMethod());
@@ -45,7 +49,7 @@ public class HopPreDoServiceEventListener implements RopEventListener<PreDoServi
             accessLog.setMessage(message);
             accessLog.setType(ACCESS_LOG_TYPE.REQUEST.getValue());
             accessLog.setCreateTime(new Timestamp(ropEvent.getServiceBeginTime()));
-            logResolver.save(accessLog);*/
+            logResolver.save(accessLog);
         }
     }
 

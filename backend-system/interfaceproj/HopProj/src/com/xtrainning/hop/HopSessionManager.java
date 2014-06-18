@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.rop.session.Session;
 import com.rop.session.SessionManager;
+import com.xtrainning.hop.entity.SysSession;
 import com.xtrainning.hop.resolver.SysSessionResolver;
 
 /**
@@ -37,8 +38,7 @@ public class HopSessionManager implements SessionManager{
     @Override
     public Session getSession(String sessionId) {
     	Session session = sessionCache.get(sessionId);
-    	return session;
-    	/*if(session != null){
+    	if(session != null){
     		return session;
     	} else {
 	    	SysSession sysSession = sessionResolver.getValidSessionBySessionId(sessionId);
@@ -49,13 +49,13 @@ public class HopSessionManager implements SessionManager{
 	    		 sessionCache.put(sessionId, tempSession);
 	    		 return tempSession;
 	    	}
-    	}*/
+    	}
     }
 
     @Override
     public void removeSession(String sessionId) {
     	sessionCache.remove(sessionId);
-//    	sessionResolver.invalidSessionBySessionId(sessionId);
+    	sessionResolver.invalidSessionBySessionId(sessionId);
     }
 }
 

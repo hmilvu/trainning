@@ -1,20 +1,29 @@
 package com.xtrainning.hop.service.mobile;
 
 import java.beans.IntrospectionException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 import junit.framework.TestCase;
 
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
 import org.junit.Test;
 
 import com.rop.MessageFormat;
 import com.rop.client.CompositeResponse;
 import com.rop.client.DefaultRopClient;
+import com.rop.utils.RopUtils;
 import com.xtrainning.hop.common.Constants.METHOD;
 import com.xtrainning.hop.request.mobile.GetMemberIdRequest;
-import com.xtrainning.hop.request.mobile.GetNewsListRequest;
+import com.xtrainning.hop.request.mobile.GetProfileRequest;
+import com.xtrainning.hop.request.mobile.LoginRequest;
+import com.xtrainning.hop.response.mobile.LoginResponse;
 import com.xtrainning.hop.response.mobile.MemberIdResponse;
-import com.xtrainning.hop.response.mobile.NewsListResponse;
+import com.xtrainning.hop.response.mobile.ProfileResponse;
+import com.xtrainning.hop.utils.HttpUtil;
 
 public class MemberServiceTest extends TestCase{
     public static final String SERVER_URL = "http://localhost:8080/hop/service";
@@ -37,6 +46,54 @@ public class MemberServiceTest extends TestCase{
         assertNotNull(response.getSuccessResponse());
         assertTrue(response.getSuccessResponse() instanceof MemberIdResponse);
 	}
+    
+    @Test
+    public void testGetMemberId2() throws JsonParseException, JsonMappingException, IOException {
+    	Map <String, String>map = new HashMap<String, String>();
+    	map.put("appKey", APP_KEY); //第二个参数为AppKey, 有O2O系统分配
+    	map.put("method", "member.getMemberId"); 
+    	map.put("v", "1.0");
+    	map.put("appVersion", APP_VERSION);
+    	map.put("format", "json");
+    	map.put("openuuid", OPENUUID);
+    	String sign = RopUtils.sign(map, APP_SECRET); //第二个参数为SecretKey, 有O2O系统分配
+    	map.put("sign", sign);
+    	String response = HttpUtil.postServer(SERVER_URL, map);
+    	assertNotNull(response);
+    }
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testLogin() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	LoginRequest ropRequest = new LoginRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setPhoneNumber("13116149383");
+        ropRequest.setPassword("asdfasfe");
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, LoginResponse.class, METHOD.LOGIN.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof LoginResponse);
+	}
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testGetProfile() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	GetProfileRequest ropRequest = new GetProfileRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setMemberId(3L);
+        ropClient.setSessionId("asdfasfasdfasdfasdf32sasdfasfasdf");
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, ProfileResponse.class, METHOD.GET_PROFILE.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof ProfileResponse);
+	}
+    
     /*@SuppressWarnings("rawtypes")
 	@Test
 	public void testSignUp() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {

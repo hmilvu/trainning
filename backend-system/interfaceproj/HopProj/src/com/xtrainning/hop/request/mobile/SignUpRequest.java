@@ -1,29 +1,29 @@
 package com.xtrainning.hop.request.mobile;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import com.rop.annotation.IgnoreSign;
-import com.sun.istack.internal.NotNull;
 
 public class SignUpRequest extends MobileBaseRequest{
+	@NotNull
+    @Pattern(regexp = "^[1-9]\\d{10}$")
+    private String phoneNumber;
+    
     @NotNull
-    private Long memberId;
-    @NotNull
-    @Pattern(regexp = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*")
-    private String email;
-    @Pattern(regexp = "\\w{6,30}")
+    @Pattern(regexp = "\\w{6,100}")
     private String password;
-	public Long getMemberId() {
-		return memberId;
+    
+    @NotNull
+    private Integer sex;
+    
+    @NotNull
+    @Pattern(regexp = "\\w{1,40}")
+    private String nickName;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	public String getPassword() {
 		return password;
@@ -31,6 +31,7 @@ public class SignUpRequest extends MobileBaseRequest{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 
 	
 

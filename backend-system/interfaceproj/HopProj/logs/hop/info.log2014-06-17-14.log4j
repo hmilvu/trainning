@@ -1,0 +1,48 @@
+2014.06.17 14:04:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 14:04:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:04:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 14:04:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 14:04:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:04:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 14:04:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.17 14:04:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:04:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.17 14:05:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 14:05:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:05:20 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 14:05:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 14:05:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:05:20 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 14:05:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.17 14:05:20 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:05:20 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.17 14:07:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 14:07:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:07:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 14:07:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 14:07:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:07:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 14:07:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.17 14:07:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:07:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":3,"nickName":"爽爽","memberIntroduction":"好好学习天天向上","sex":0,"supportNum":0,"askNum":0,"answerNum":0,"followQuestionNum":0,"followTopicNum":0}
+2014.06.17 14:08:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 14:08:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:08:21 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 14:08:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 14:08:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:08:22 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 14:08:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.17 14:08:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 14:08:22 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":3,"nickName":"爽爽","memberIntroduction":"好好学习天天向上","sex":0,"supportNum":0,"askNum":0,"answerNum":0,"followQuestionNum":0,"followTopicNum":0}

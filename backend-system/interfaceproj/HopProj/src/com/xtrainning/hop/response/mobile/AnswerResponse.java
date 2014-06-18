@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "newsResponse")
+@XmlRootElement(name = "answerResponse")
 public class AnswerResponse extends MobileBaseResponse {
 	@XmlElement
 	private Long answerId;

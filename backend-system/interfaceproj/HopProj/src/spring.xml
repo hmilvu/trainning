@@ -22,63 +22,48 @@
     
     <context:component-scan base-package="com"/>  
     
-	<!-- 指定【外在化应用参数的配置文件】路径 -->
 	<context:property-placeholder location="/WEB-INF/classes/base.properties"/>
 	
-	<!-- 数据源 -->
-	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/foodDS" /> 	 -->
+	<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/trainDS" />
 		
-	<!-- 定义 Hibernate sessionFactory -->
-	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		设置Hibernate属性
 		<property name="hibernateProperties">
 			<props>
-			    数据库方言
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
-				是否在控制台输出生成的SQL语句
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
-				是否将SQL语句格式化为良好的SQL
 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
-				是否为SQL语句添加有助于调试的注释
 				<prop key="hibernate.use_sql_comments">${hibernate.use_sql_comments}</prop>
 			</props>
 		</property>
 		<property name="packagesToScan" value="com.xtrainning.hop.entity" /> 
 	</bean>
-	 -->
-	<!-- 配置Hibernate的局部事务管理器 -->
-<!-- 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean> -->
 	
-	<!-- 配置事务增强处理Bean -->
-<!-- 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+ 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+ 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			所有以'get'开头的方式为只读模式
 			<tx:method name="get*" read-only="true"/>
-			所有以'find'开头的方式为只读模式
 			<tx:method name="find*" read-only="true"/>
-			其他方式采用默认事务设置
+			<tx:method name="load*" read-only="true"/>
+			<tx:method name="search*" read-only="true"/>
 			<tx:method name="*" rollback-for="Throwable"/>
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		配置事务切入点，在dao包下的所有以Dao结尾的类中，匹配所有方法
 		<aop:pointcut id="daoPointCut" expression="execution(* com.xtrainning.hop.dao.*.*DAO.*(..))"/>
-		指定在事务切入点，应用事务增强处理Bean
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="daoPointCut"/>
 	</aop:config>
 	<aop:config>
-		配置事务切入点，在service包下的所有以Service结尾的类中，匹配所有方法
 		<aop:pointcut id="servicePointCut" expression="execution(* com.xtrainning.hop.resolver..*Resolver.*(..))"/>
-		指定在事务切入点，应用事务增强处理Bean
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointCut"/>
 	</aop:config>
 	
 	
-	<task:annotation-driven executor="hopExecutor" scheduler="hopScheduler" />
+	<!-- <task:annotation-driven executor="hopExecutor" scheduler="hopScheduler" />
 	<task:executor id="hopExecutor" pool-size="50" />
-	<task:scheduler id="hopScheduler" pool-size="100" /> -->
+	<task:scheduler id="hopScheduler" pool-size="100" />  -->
 	
 </beans>

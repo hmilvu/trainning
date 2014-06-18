@@ -1,0 +1,12 @@
+2014.06.16 22:14:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.16 22:14:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 22:14:47 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.16 22:28:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.16 22:28:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 22:28:17 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.16 22:37:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.16 22:37:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.16 22:37:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"25","message":"无效签名","solution":"签名无效，请按正确的算法对请求数据进行签名:SHA1(<secret> <paramName1><paramValue><secret>),注意参数列表按字母顺序排列"}

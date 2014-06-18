@@ -5,7 +5,9 @@ import java.util.List;
 import com.rop.annotation.NeedInSessionType;
 import com.rop.annotation.ServiceMethod;
 import com.rop.annotation.ServiceMethodBean;
+import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
 import com.xtrainning.hop.request.mobile.GetQuestionDetailRequest;
+import com.xtrainning.hop.response.mobile.AnswerListResponse;
 import com.xtrainning.hop.response.mobile.AnswerResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
 import com.xtrainning.hop.response.mobile.TopicResponse;
@@ -46,6 +48,23 @@ public class QuestionService extends MobileBaseService{
 		
 		response.setImageList(imageUrlList);
         return response;
+	}
+	
+	@ServiceMethod(method = "question.getAnswerList",version = "1.0",needInSession = NeedInSessionType.NO)
+    public Object getAnswerList(GetAnswerListRequest request) {
+		AnswerListResponse response = new AnswerListResponse();
+		List<AnswerResponse> list = new ArrayList<AnswerResponse>();
+		AnswerResponse r = new AnswerResponse();
+		r.setAnswerId(3L);
+		r.setAnswerContent("answer");
+		AnswerResponse r1 = new AnswerResponse();
+		r1.setAnswerId(4L);
+		r1.setAnswerContent("answer2");
+		list.add(r);
+		list.add(r1);
+		response.setAnswerList(list);
+		return response;
+		
 	}
 	
 }

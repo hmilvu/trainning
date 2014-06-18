@@ -4,6 +4,7 @@
  */
 package com.xtrainning.hop;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.rop.security.ServiceAccessController;
 import com.rop.session.Session;
+import com.xtrainning.hop.common.Constants.CLIENT_APPKEY_STATUS;
+import com.xtrainning.hop.entity.AccessPrivilege;
+import com.xtrainning.hop.entity.ClientAppkey;
 import com.xtrainning.hop.resolver.AccessPrivilegeResolver;
 import com.xtrainning.hop.resolver.ClientAppkeyResolver;
 
@@ -28,14 +32,12 @@ public class HopServiceAccessController implements ServiceAccessController {
 	private static final Map<String, List<String>> aclMap = new HashMap<String, List<String>>();
     @Autowired
 	private AccessPrivilegeResolver accessPrivilegeResolver;
-    
     @Autowired
     private ClientAppkeyResolver clientAppkeyResolver;
 
     @Override
     public boolean isAppGranted(String appKey, String method, String version) {
-    	return true;
-    	/*if(aclMap.isEmpty()){
+    	if(aclMap.isEmpty()){
     		loadPrivilege();
     	}
         if(aclMap.containsKey(appKey)){
@@ -44,21 +46,21 @@ public class HopServiceAccessController implements ServiceAccessController {
             return access;
         }else{
             return false;
-        }*/
+        }
     }
 
     private void loadPrivilege() {
-    	/*List<ClientAppkey> list = clientAppkeyResolver.findAllClientAppkey();
+    	List<ClientAppkey> list = clientAppkeyResolver.findAllClientAppkey();
 		for(ClientAppkey appkey : list){
 			if(appkey.getStatus().intValue() == CLIENT_APPKEY_STATUS.ACTIVE.getValue()){
-				List<AccessPrivilege> privilegeList = accessPrivilegeResolver.findClientPrivilege(appkey.getAppkey());
+				List<AccessPrivilege> privilegeList = accessPrivilegeResolver.findClientPrivilege(appkey.getAppKey());
 				List<String> serviceMethods = new ArrayList<String>();
 				for(AccessPrivilege privilege : privilegeList){		
-					serviceMethods.add(privilege.getMethod());
+					serviceMethods.add(privilege.getMethodName());
 				}
-				aclMap.put(appkey.getAppkey(), serviceMethods);
+				aclMap.put(appkey.getAppKey(), serviceMethods);
 			}
-		}	*/	
+		}	
 	}
 
 	@Override

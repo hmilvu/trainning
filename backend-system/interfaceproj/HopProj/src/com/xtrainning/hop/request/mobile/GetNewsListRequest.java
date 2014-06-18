@@ -1,20 +1,14 @@
 package com.xtrainning.hop.request.mobile;
 
-import com.sun.istack.internal.NotNull;
+import javax.validation.constraints.NotNull;
 
-public class GetNewsListRequest extends MobileBaseRequest{
-    @NotNull
-    private Long memberId;
+
+
+public class GetNewsListRequest extends MemberBaseRequest{
     @NotNull
 	private Integer pageSize;
     @NotNull
 	private Integer pageNumber;
-	public Long getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-	}
 	public Integer getPageSize() {
 		return pageSize;
 	}

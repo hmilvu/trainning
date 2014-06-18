@@ -1,0 +1,72 @@
+2014.06.17 13:12:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:12:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:12:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:12:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:09 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 13:12:27 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:12:27 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:27 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:12:28 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:12:28 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:28 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"33","message":"非法的参数","solution":"请查看根据服务接口对参数格式的要求","subErrors":[{"code":"isv.invalid-paramete:phoneNumber","message":"参数phoneNumber无效，格式不对、非法值、越界等"}]}
+2014.06.17 13:12:36 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:12:36 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:36 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:12:36 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:12:36 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:36 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"33","message":"非法的参数","solution":"请查看根据服务接口对参数格式的要求","subErrors":[{"code":"isv.invalid-paramete:phoneNumber","message":"参数phoneNumber无效，格式不对、非法值、越界等"}]}
+2014.06.17 13:12:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:12:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:46 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:12:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:12:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:46 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"33","message":"非法的参数","solution":"请查看根据服务接口对参数格式的要求","subErrors":[{"code":"isv.invalid-paramete:phoneNumber","message":"参数phoneNumber无效，格式不对、非法值、越界等"}]}
+2014.06.17 13:12:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:12:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:12:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:12:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:12:54 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 13:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"33","message":"非法的参数","solution":"请查看根据服务接口对参数格式的要求","subErrors":[{"code":"isv.invalid-paramete:phoneNumber","message":"参数phoneNumber无效，格式不对、非法值、越界等"}]}
+2014.06.17 13:13:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:13:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:13:09 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:13:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:13:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:13:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"33","message":"非法的参数","solution":"请查看根据服务接口对参数格式的要求","subErrors":[{"code":"isv.invalid-paramete:phoneNumber","message":"参数phoneNumber无效，格式不对、非法值、越界等"}]}
+2014.06.17 13:13:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 13:13:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:13:21 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 13:13:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.17 13:13:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:13:21 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"JASHFIUEOBLKJAHFUELAJDFEU","memberId":3}
+2014.06.17 13:43:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性
+2014.06.17 13:43:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:43:52 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"topicList":[{"topicId":1,"topicName":"name","followedNum":3,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]},{"topicId":2,"followedNum":6,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]}]}
+2014.06.17 13:43:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetTopicDetailRequest不需要签名的属性
+2014.06.17 13:43:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetTopicDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 13:43:52 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"topicId":1,"topicName":"name","followedNum":3,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]}

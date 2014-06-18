@@ -10,6 +10,12 @@ public class QuestionResponse extends MobileBaseResponse {
 	private Long questionId = 0L;
 	@XmlElement
 	private String questionTopic;
+	@XmlElement
+	private Integer answerSupportNum;
+	@XmlElement
+	private Long answerId;
+	@XmlElement
+	private String answerContent;
 	public Long getQuestionId() {
 		return questionId == null ? 0 : questionId;
 	}
@@ -21,6 +27,24 @@ public class QuestionResponse extends MobileBaseResponse {
 	}
 	public void setQuestionTopic(String questionTopic) {
 		this.questionTopic = questionTopic;
+	}
+	public Integer getAnswerSupportNum() {
+		return answerSupportNum;
+	}
+	public void setAnswerSupportNum(Integer answerSupportNum) {
+		this.answerSupportNum = answerSupportNum;
+	}
+	public Long getAnswerId() {
+		return answerId;
+	}
+	public void setAnswerId(Long answerId) {
+		this.answerId = answerId;
+	}
+	public String getAnswerContent() {
+		return answerContent;
+	}
+	public void setAnswerContent(String answerContent) {
+		this.answerContent = answerContent;
 	}	
 	
 }

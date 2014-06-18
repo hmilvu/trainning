@@ -17,7 +17,11 @@ public class QuestionDetailResponse extends QuestionResponse {
 	@XmlElement
 	private Integer followedNum;
 	@XmlElement
+	private Integer followedFlag;
+	@XmlElement
 	private Integer commentNum;
+	@XmlElement
+	private Integer warningFlag;
 	@XmlElement
 	private String createTime;
 	@XmlElement
@@ -79,6 +83,18 @@ public class QuestionDetailResponse extends QuestionResponse {
 	}
 	public void setImageList(List<String> imageList) {
 		this.imageList = imageList;
+	}
+	public Integer getWarningFlag() {
+		return warningFlag;
+	}
+	public void setWarningFlag(Integer warningFlag) {
+		this.warningFlag = warningFlag;
+	}
+	public Integer getFollowedFlag() {
+		return followedFlag;
+	}
+	public void setFollowedFlag(Integer followedFlag) {
+		this.followedFlag = followedFlag;
 	}
 	
 	

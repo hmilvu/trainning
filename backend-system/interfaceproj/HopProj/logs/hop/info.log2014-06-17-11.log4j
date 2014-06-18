@@ -1,0 +1,64 @@
+2014.06.17 11:35:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 11:35:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:35:45 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 11:42:19 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 11:42:19 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:42:20 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"32","message":"缺少必选参数","solution":"请查看根据服务接口，添加必须的参数","subErrors":[{"code":"isv.missing-parameter:memberId","message":"缺少必要的参数memberId"}]}
+2014.06.17 11:46:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 11:46:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:46:11 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 11:46:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性
+2014.06.17 11:46:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:46:11 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"27","message":"不存在的方法名","solution":"无效的方法，请检查服务方法名是否正确"}
+2014.06.17 11:47:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 11:47:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:47:22 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 11:47:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性
+2014.06.17 11:47:22 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:47:22 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"32","message":"缺少必选参数","solution":"请查看根据服务接口，添加必须的参数","subErrors":[{"code":"isv.missing-parameter:pageSize","message":"缺少必要的参数pageSize"},{"code":"isv.missing-parameter:pageNumber","message":"缺少必要的参数pageNumber"}]}
+2014.06.17 11:47:59 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 11:47:59 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:47:59 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 11:47:59 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性
+2014.06.17 11:47:59 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:47:59 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 11:48:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性
+2014.06.17 11:48:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:48:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"topicList":[{"topicId":1,"topicName":"name","followedNum":3,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]},{"topicId":2,"followedNum":6,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]}]}
+2014.06.17 11:48:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.17 11:48:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:48:15 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"32","message":"缺少必选参数","solution":"请查看根据服务接口，添加必须的参数","subErrors":[{"code":"isv.missing-parameter:memberId","message":"缺少必要的参数memberId"}]}
+2014.06.17 11:48:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.17 11:48:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:48:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"32","message":"缺少必选参数","solution":"请查看根据服务接口，添加必须的参数","subErrors":[{"code":"isv.missing-parameter:memberId","message":"缺少必要的参数memberId"}]}
+2014.06.17 11:49:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.17 11:49:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:49:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"32","message":"缺少必选参数","solution":"请查看根据服务接口，添加必须的参数","subErrors":[{"code":"isv.missing-parameter:memberId","message":"缺少必要的参数memberId"}]}
+2014.06.17 11:52:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.17 11:52:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:52:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"newsList":[{"newId":2},{}]}
+2014.06.17 11:53:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 11:53:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:53:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 11:54:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 11:54:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:54:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 11:54:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性
+2014.06.17 11:54:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetAnswerListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 11:54:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}

@@ -19,7 +19,6 @@ public class HopPostInitializeEventListener implements RopEventListener<AfterSta
 
     @Override
     public void onRopEvent(AfterStartedRopEvent ropRopEvent) {
-//        System.out.println("execute BopPostInitializeEventListener!");
     }
 
     @Override

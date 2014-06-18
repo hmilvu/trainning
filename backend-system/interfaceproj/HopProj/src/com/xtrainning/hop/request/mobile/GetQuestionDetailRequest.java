@@ -1,8 +1,10 @@
 package com.xtrainning.hop.request.mobile;
 
-import com.sun.istack.internal.NotNull;
+import javax.validation.constraints.NotNull;
 
-public class GetQuestionDetailRequest extends MobileBaseRequest{
+
+
+public class GetQuestionDetailRequest extends MemberBaseRequest{
     @NotNull
     private Long questionId;
 

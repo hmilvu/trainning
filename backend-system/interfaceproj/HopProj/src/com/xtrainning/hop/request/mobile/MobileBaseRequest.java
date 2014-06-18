@@ -1,7 +1,8 @@
 package com.xtrainning.hop.request.mobile;
 
+import javax.validation.constraints.NotNull;
+
 import com.rop.AbstractRopRequest;
-import com.sun.istack.internal.NotNull;
 
 public class MobileBaseRequest extends AbstractRopRequest{
 	@NotNull

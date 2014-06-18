@@ -1,0 +1,28 @@
+2014.06.17 09:30:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 09:30:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:30:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 09:31:39 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性
+2014.06.17 09:31:39 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetNewsListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:31:40 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"newsList":[{"newId":2},{}]}
+2014.06.17 09:31:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性
+2014.06.17 09:31:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetQuestionDetailRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:31:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"questionId":0,"memberId":0,"topicList":[{"topicId":1,"topicName":"name","followedNum":3},{"topicId":2,"followedNum":6}],"imageList":["url1","url2"],"answerList":[{"answerId":3,"answerContent":"answer"},{"answerId":4,"answerContent":"answer2"}]}
+2014.06.17 09:32:01 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性
+2014.06.17 09:32:01 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetTopicListRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:32:01 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"topicList":[{"topicId":1,"topicName":"name","followedNum":3,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]},{"topicId":2,"followedNum":6,"questionList":[{"questionId":3,"questionTopic":"q1"},{"questionId":1,"questionTopic":"q1"}]}]}
+2014.06.17 09:35:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 09:35:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:35:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 09:37:01 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 09:37:01 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:37:01 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
+2014.06.17 09:37:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.17 09:37:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.17 09:37:11 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":null}
