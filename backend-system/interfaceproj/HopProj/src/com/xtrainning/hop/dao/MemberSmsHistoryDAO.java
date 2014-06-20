@@ -1,12 +1,18 @@
 package com.xtrainning.hop.dao;
 
-import java.util.List;
-import org.hibernate.LockMode;
+import java.sql.SQLException;
+import java.util.Date;
+
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
-import static org.hibernate.criterion.Example.create;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
 
+import com.xtrainning.hop.common.Constants.SMS_STATUS;
+import com.xtrainning.hop.common.Constants.SMS_TYPE;
 import com.xtrainning.hop.entity.MemberSmsHistory;
 
 /**
@@ -17,122 +23,63 @@ import com.xtrainning.hop.entity.MemberSmsHistory;
 	 * @see com.xtrainning.hop.entity.hop.entity.MemberSmsHistory
   * @author MyEclipse Persistence Tools 
  */
-
+@Repository
 public class MemberSmsHistoryDAO extends BaseHibernateDAO  {
 	     private static final Logger log = LoggerFactory.getLogger(MemberSmsHistoryDAO.class);
 	
-
-    
     public void save(MemberSmsHistory transientInstance) {
         log.debug("saving MemberSmsHistory instance");
         try {
-            getSession().save(transientInstance);
+            getHibernateTemplate().save(transientInstance);
+            getHibernateTemplate().flush();
             log.debug("save successful");
         } catch (RuntimeException re) {
             log.error("save failed", re);
             throw re;
         }
     }
-    
-	public void delete(MemberSmsHistory persistentInstance) {
-        log.debug("deleting MemberSmsHistory instance");
-        try {
-            getSession().delete(persistentInstance);
-            log.debug("delete successful");
-        } catch (RuntimeException re) {
-            log.error("delete failed", re);
-            throw re;
-        }
-    }
-    
-    public MemberSmsHistory findById( java.lang.Long id) {
-        log.debug("getting MemberSmsHistory instance with id: " + id);
-        try {
-            MemberSmsHistory instance = (MemberSmsHistory) getSession()
-                    .get("com.hop.entity.MemberSmsHistory", id);
-            return instance;
-        } catch (RuntimeException re) {
-            log.error("get failed", re);
-            throw re;
-        }
-    }
-    
-    
-    public List<MemberSmsHistory> findByExample(MemberSmsHistory instance) {
-        log.debug("finding MemberSmsHistory instance by example");
-        try {
-            List<MemberSmsHistory> results = (List<MemberSmsHistory>) getSession()
-                    .createCriteria("com.hop.entity.MemberSmsHistory")
-                    .add( create(instance) )
-            .list();
-            log.debug("find by example successful, result size: " + results.size());
-            return results;
-        } catch (RuntimeException re) {
-            log.error("find by example failed", re);
-            throw re;
-        }
-    }    
-    
-    public List findByProperty(String propertyName, Object value) {
-      log.debug("finding MemberSmsHistory instance with property: " + propertyName
-            + ", value: " + value);
-      try {
-         String queryString = "from MemberSmsHistory as model where model." 
-         						+ propertyName + "= ?";
-         Query queryObject = getSession().createQuery(queryString);
-		 queryObject.setParameter(0, value);
-		 return queryObject.list();
-      } catch (RuntimeException re) {
-         log.error("find by property name failed", re);
-         throw re;
-      }
+
+	public MemberSmsHistory getLastestHistory(final SMS_TYPE type,
+			final String phoneNumber) {
+		return getHibernateTemplate().execute(new HibernateCallback<MemberSmsHistory>() {
+			@Override
+			public MemberSmsHistory doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				Query q = session.createQuery("from MemberSmsHistory where type = ? and phoneNumber = ? and status =" + SMS_STATUS.SENT_SUCCESS.getValue() 
+						+ " order by createTime desc");
+				q.setInteger(0, type.getValue());
+				q.setString(1, phoneNumber);
+				q.setMaxResults(1);
+				return (MemberSmsHistory) q.uniqueResult();
+			}
+		});
 	}
 
-
-	public List findAll() {
-		log.debug("finding all MemberSmsHistory instances");
-		try {
-			String queryString = "from MemberSmsHistory";
-	         Query queryObject = getSession().createQuery(queryString);
-			 return queryObject.list();
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
+	public Long getTodayMaxSms(final SMS_TYPE type, final String phoneNumber) {
+		return getHibernateTemplate().execute(new HibernateCallback<Long>() {
+			@Override
+			public Long doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				Query q = session.createQuery("select count(*) from MemberSmsHistory where status = ? and phoneNumber = ? and type = ? and createTime >= ?");
+				q.setInteger(0, SMS_STATUS.SENT_SUCCESS.getValue());
+				q.setString(1, phoneNumber);
+				q.setInteger(2, type.getValue());
+				q.setDate(3, new Date());
+				return (Long) q.uniqueResult();
+			}
+		});
 	}
-	
-    public MemberSmsHistory merge(MemberSmsHistory detachedInstance) {
-        log.debug("merging MemberSmsHistory instance");
-        try {
-            MemberSmsHistory result = (MemberSmsHistory) getSession()
-                    .merge(detachedInstance);
-            log.debug("merge successful");
-            return result;
-        } catch (RuntimeException re) {
-            log.error("merge failed", re);
-            throw re;
-        }
-    }
 
-    public void attachDirty(MemberSmsHistory instance) {
-        log.debug("attaching dirty MemberSmsHistory instance");
+	public void update(MemberSmsHistory msg) {
+		log.debug("update MemberSmsHistory instance");
         try {
-            getSession().saveOrUpdate(instance);
-            log.debug("attach successful");
+            getHibernateTemplate().update(msg);
+            getHibernateTemplate().flush();
+            log.debug("update successful");
         } catch (RuntimeException re) {
-            log.error("attach failed", re);
+            log.error("update failed", re);
             throw re;
         }
-    }
-    
-    public void attachClean(MemberSmsHistory instance) {
-        log.debug("attaching clean MemberSmsHistory instance");
-        try {
-            getSession().lock(instance, LockMode.NONE);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
+		
+	}
 }

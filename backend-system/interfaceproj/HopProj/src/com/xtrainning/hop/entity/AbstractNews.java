@@ -28,7 +28,6 @@ public abstract class AbstractNews extends BaseEntity implements java.io.Seriali
      private Integer actionType;
      private Integer supportNum;
      private Timestamp createTime;
-     private Integer followedMark;
      private Integer status;
      private String memberNickname;
      private String memberIntroduction;
@@ -49,7 +48,6 @@ public abstract class AbstractNews extends BaseEntity implements java.io.Seriali
         this.actionType = actionType;
         this.supportNum = supportNum;
         this.createTime = createTime;
-        this.followedMark = followedMark;
         this.status = status;
         this.questionName = questionName;
     }
@@ -62,7 +60,6 @@ public abstract class AbstractNews extends BaseEntity implements java.io.Seriali
         this.actionType = actionType;
         this.supportNum = supportNum;
         this.createTime = createTime;
-        this.followedMark = followedMark;
         this.status = status;
         this.memberNickname = memberNickname;
         this.memberIntroduction = memberIntroduction;
@@ -142,16 +139,6 @@ public abstract class AbstractNews extends BaseEntity implements java.io.Seriali
     
     public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
-    }
-    
-    @Column(name="followed_mark", nullable=false)
-
-    public Integer getFollowedMark() {
-        return this.followedMark;
-    }
-    
-    public void setFollowedMark(Integer followedMark) {
-        this.followedMark = followedMark;
     }
     
     @Column(name="status", nullable=false)

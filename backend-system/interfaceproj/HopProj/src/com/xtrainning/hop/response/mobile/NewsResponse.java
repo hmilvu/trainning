@@ -13,7 +13,7 @@ public class NewsResponse extends MobileBaseResponse {
 	@XmlElement
 	private String nickName;
 	@XmlElement
-	private String actionType;
+	private Integer actionType;
 	@XmlElement
 	private Long questionId;
 	@XmlElement
@@ -46,10 +46,10 @@ public class NewsResponse extends MobileBaseResponse {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
-	public String getActionType() {
+	public Integer getActionType() {
 		return actionType;
 	}
-	public void setActionType(String actionType) {
+	public void setActionType(Integer actionType) {
 		this.actionType = actionType;
 	}
 	public Long getQuestionId() {

@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import org.hibernate.annotations.GenericGenerator;
@@ -29,6 +31,7 @@ public abstract class AbstractTopic extends BaseEntity implements java.io.Serial
      private Timestamp createTime;
      private Integer followNum;
      private String typeCode;
+     private Member member;
      private Set<QuestionTopic> questionTopics = new HashSet<QuestionTopic>(0);
      private Set<MemberFollowTopic> memberFollowTopics = new HashSet<MemberFollowTopic>(0);
 
@@ -140,7 +143,16 @@ public abstract class AbstractTopic extends BaseEntity implements java.io.Serial
         this.memberFollowTopics = memberFollowTopics;
     }
    
+	@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="member_id", nullable=false)
 
+    public Member getMember() {
+        return this.member;
+    }
+    
+    public void setMember(Member member) {
+        this.member = member;
+    }
 
 
 

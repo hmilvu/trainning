@@ -37,18 +37,19 @@ public abstract class AbstractMember extends BaseEntity implements java.io.Seria
      private String thirdPartyId;
      private Integer thirdPartyType;
      private Integer registerStatus;
-     private Integer followQaNum;
-     private Integer followTopicNum;
-     private Integer askQaNum;
-     private Integer answerQaNum;
+     private Integer followQaNum = 0;
+     private Integer followTopicNum = 0;
+     private Integer askQaNum = 0;
+     private Integer answerQaNum = 0;
      private Integer isDefault;
      private Timestamp createTime;
      private String introduction;
      private Integer sex;
-     private Integer supportNum;
+     private Integer supportNum = 0;
      private Integer pushStatus;
      private String code;
      private Timestamp codeTime;
+     private Timestamp lastAccessTime;
      private Set<Answer> answers = new HashSet<Answer>(0);
      private Set<Question> questions = new HashSet<Question>(0);
      private Set<MemberSmsHistory> memberSmsHistories = new HashSet<MemberSmsHistory>(0);
@@ -369,6 +370,15 @@ public abstract class AbstractMember extends BaseEntity implements java.io.Seria
     public void setCodeTime(Timestamp codeTime) {
         this.codeTime = codeTime;
     }
+    @Column(name="last_access_time", nullable=false, length=19)
+    public Timestamp getLastAccessTime() {
+		return lastAccessTime;
+	}
+
+	public void setLastAccessTime(Timestamp lastAccessTime) {
+		this.lastAccessTime = lastAccessTime;
+	}
+
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="member")
 
     public Set<Answer> getAnswers() {

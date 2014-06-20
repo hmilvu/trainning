@@ -2,20 +2,31 @@ package com.xtrainning.hop.service.mobile;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.rop.annotation.NeedInSessionType;
 import com.rop.annotation.ServiceMethod;
 import com.rop.annotation.ServiceMethodBean;
+import com.rop.response.BusinessServiceErrorResponse;
+import com.xtrainning.hop.entity.Member;
+import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
 import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
 import com.xtrainning.hop.request.mobile.GetQuestionDetailRequest;
+import com.xtrainning.hop.resolver.MemberResolver;
+import com.xtrainning.hop.resolver.QuestionResolver;
+import com.xtrainning.hop.resolver.TopicResolver;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
 import com.xtrainning.hop.response.mobile.AnswerResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
+import com.xtrainning.hop.response.mobile.SimpleResponse;
 import com.xtrainning.hop.response.mobile.TopicResponse;
 
 @ServiceMethodBean
 public class QuestionService extends MobileBaseService{
-//	@Autowired private MemberResolver memberResolver;
-
+	@Autowired private QuestionResolver questionResolver;
+	@Autowired private TopicResolver topicResolver;
+	@Autowired private MemberResolver memberResolver;
+	
 	@ServiceMethod(method = "question.getQuestionDetail",version = "1.0",needInSession = NeedInSessionType.NO)
     public Object getQuestionDetail(GetQuestionDetailRequest request) {
 		QuestionDetailResponse response = new QuestionDetailResponse();
@@ -65,6 +76,18 @@ public class QuestionService extends MobileBaseService{
 		response.setAnswerList(list);
 		return response;
 		
+	}
+	
+	@ServiceMethod(method = "question.createQuestion",version = "1.0",needInSession = NeedInSessionType.YES)
+    public Object createQuestion(CreateQuestionRequest request) {
+		Member m = memberResolver.getMemberById(request.getMemberId());
+		if(m == null){
+			return new BusinessServiceErrorResponse(
+        			request.getRopRequestContext().getMethod(), "NO_SUCH_MEMBER",
+        			request.getRopRequestContext().getLocale(), request.getMemberId());
+		}
+		questionResolver.createQuestion(request, m);
+		return new SimpleResponse();
 	}
 	
 }

@@ -4,8 +4,15 @@ package com.xtrainning.hop.common;
 public class Constants {
 	
 	public static final String SUCCESS = "success";
+	public static final Integer DEFAULT_PAGE_SIZE = 10;
+	public static final String SMS_SIGN_UP_TEMPLATE = "sms_sign_up_template";
+	public static final String SMS_RESET_PASSWORD_TEMPLATE = "sms_reset_password_template";
+	public static final String MAX_SMS_SIGN_UP_NUM = "max_sms_sign_up_num";
+	public static final String MAX_SMS_RESET_PASSWORD_NUM = "max_sms_reset_password_num";
 	public enum METHOD {
 		GET_MEMBER_ID("member.getMemberId"),
+		PRE_SIGN_UP("member.preSignUp"),
+		SIGN_UP("member.signUp"),
 		LOGIN("member.login"),
 		GET_PROFILE("member.getProfile"),
 		
@@ -13,6 +20,7 @@ public class Constants {
 		
 		GET_QUESTION_DETAIL("question.getQuestionDetail"),
 		GET_ANSWER_DETAIL("question.getAnswerList"),
+		CREATE_QUESTION("question.createQuestion"),
 		
 		GET_TOPIC_DETAIL("topic.getTopicDetail"),
 		GET_TOPIC_LIST("topic.getTopicList");
@@ -113,4 +121,80 @@ public class Constants {
 		}
 	}
 	
+	public enum NEWS_STATUS {
+		ACTIVE(0), DELETED(1);
+		private int value;
+		private NEWS_STATUS(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum TOPIC_STATUS {
+		ACTIVE(0), DELETED(1);
+		private int value;
+		private TOPIC_STATUS(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum QUESTION_STATUS {
+		ACTIVE(0), DELETED(1);
+		private int value;
+		private QUESTION_STATUS(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum NEWS_ACTION_TYPE {
+		QUESTION(0), ANSWER(1);
+		private int value;
+		private NEWS_ACTION_TYPE(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum SMS_TYPE {
+		SIGN_UP(0), RESET_PWD(1);
+		private int value;
+		private SMS_TYPE(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum SMS_STATUS {
+		SENT_SUCCESS(0), SENT_FAILED(1);
+		private int value;
+		private SMS_STATUS(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum THIRD_PARTY_TYPE {
+		WEIBO(0), WEIXIN(1), QQ(2);
+		private int value;
+		private THIRD_PARTY_TYPE(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
 }

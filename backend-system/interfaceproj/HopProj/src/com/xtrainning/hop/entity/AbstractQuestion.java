@@ -88,7 +88,7 @@ public abstract class AbstractQuestion extends BaseEntity implements java.io.Ser
         this.id = id;
     }
 	@ManyToOne(fetch=FetchType.LAZY)
-        @JoinColumn(name="member_id", nullable=false)
+    @JoinColumn(name="member_id", nullable=false)
 
     public Member getMember() {
         return this.member;

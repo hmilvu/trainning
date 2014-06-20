@@ -11,10 +11,12 @@ import com.rop.MessageFormat;
 import com.rop.client.CompositeResponse;
 import com.rop.client.DefaultRopClient;
 import com.xtrainning.hop.common.Constants.METHOD;
+import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
 import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
 import com.xtrainning.hop.request.mobile.GetQuestionDetailRequest;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
+import com.xtrainning.hop.response.mobile.SimpleResponse;
 
 public class QuestionServiceTest extends TestCase{
     public static final String SERVER_URL = "http://localhost:8080/hop/service";
@@ -56,4 +58,24 @@ public class QuestionServiceTest extends TestCase{
         assertNotNull(response.getSuccessResponse());
         assertTrue(response.getSuccessResponse() instanceof AnswerListResponse);
 	}
+    
+    @SuppressWarnings("rawtypes")
+   	@Test
+   	public void testCreateQuestion() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+       	CreateQuestionRequest ropRequest = new CreateQuestionRequest();
+           ropRequest.setAppVersion(APP_VERSION);
+           ropRequest.setMemberId(1L);
+           ropRequest.setDescription("des");
+           ropRequest.setName("name");
+           ropRequest.setNewTopicName("新topic");
+           ropRequest.setTopicIds("1");
+           ropClient.setMessageFormat(MessageFormat.json);
+           ropClient.setSessionId("abc");
+           CompositeResponse response = ropClient.buildClientRequest()
+                                      .post(ropRequest, SimpleResponse.class, METHOD.CREATE_QUESTION.getValue(), "1.0");
+           assertNotNull(response);
+           assertTrue(response.isSuccessful());
+           assertNotNull(response.getSuccessResponse());
+           assertTrue(response.getSuccessResponse() instanceof SimpleResponse);
+   	}
 }

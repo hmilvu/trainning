@@ -1,9 +1,14 @@
 package com.xtrainning.hop.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
 import com.xtrainning.hop.entity.ClientAppkey;
@@ -23,5 +28,18 @@ public class ClientAppkeyDAO extends BaseHibernateDAO  {
 	@SuppressWarnings("unchecked")
 	public List<ClientAppkey> findAll() {
 		return getHibernateTemplate().find("from ClientAppkey");
+	}
+
+	public Integer getOsTypeByAppkey(final String appKey) {
+		return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+			@Override
+			public Integer doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				Query q = session.createQuery("select osType from ClientAppkey where appKey = ?");
+				q.setString(0, appKey);
+				q.setMaxResults(1);
+				return (Integer) q.uniqueResult();
+			}
+		});
 	}
 }

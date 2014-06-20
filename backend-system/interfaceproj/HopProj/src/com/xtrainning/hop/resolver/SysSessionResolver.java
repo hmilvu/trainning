@@ -24,10 +24,12 @@ public class SysSessionResolver {
 		sessionDao.invalidSessionBySessionId(sessionId);		
 	}
 
-	public SysSession buildMemberSession(Member m) {
+	public SysSession buildMemberSession(Long memberId) {
 		SysSession session = new SysSession();
 		session.setLastAccessTime(new Timestamp(new Date().getTime()));
 		session.setStatus(SYS_SESSION_STATUS.ACTIVE.getValue());
+		Member m = new Member();
+		m.setId(memberId);
 		session.setMember(m);
 		session.setSessionId(RopUtils.getUUID());
 		sessionDao.save(session);

@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import static org.hibernate.criterion.Example.create;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import com.xtrainning.hop.entity.QuestionTopic;
 
@@ -17,7 +18,7 @@ import com.xtrainning.hop.entity.QuestionTopic;
 	 * @see com.xtrainning.hop.entity.hop.entity.QuestionTopic
   * @author MyEclipse Persistence Tools 
  */
-
+@Repository
 public class QuestionTopicDAO extends BaseHibernateDAO  {
 	     private static final Logger log = LoggerFactory.getLogger(QuestionTopicDAO.class);
 	

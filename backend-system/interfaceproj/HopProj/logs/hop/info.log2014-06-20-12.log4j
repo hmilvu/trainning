@@ -1,0 +1,260 @@
+2014.06.20 12:11:56 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:11:56 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:11:57 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:11:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:11:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:11:58 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:11:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:11:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:11:58 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:11:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:11:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:11:58 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"32","message":"缺少必选参数","solution":"请查看根据服务接口，添加必须的参数","subErrors":[{"code":"isv.missing-parameter:appVersion","message":"缺少必要的参数appVersion"}]}
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:13:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"1","message":"服务不可用","solution":"服务目前无法使用，请保存好错误信息并和服务平台管理员联系","subErrors":[{"code":"isp.member-preSignUp-service-unavailable","message":"调用后端服务member.preSignUp抛异常:java.lang.IllegalArgumentException，服务不可用。\n异常信息:\njava.lang.RuntimeException: java.lang.IllegalArgumentException: Positional parameter does not exist: 1 in query: select id from Member where phoneNumber = ?\r\n\tat com.rop.impl.AnnotationServiceMethodAdapter.invokeServiceMethod(AnnotationServiceMethodAdapter.java:54)\r\n\tat com.rop.impl.AnnotationServletServiceRouter.doService(AnnotationServletServiceRouter.java:515)\r\n\tat com.rop.impl.AnnotationServletServiceRouter.access$600(AnnotationServletServiceRouter.java:40)\r\n\tat com.rop.impl.AnnotationServletServiceRouter$ServiceRunnable.run(AnnotationServletServiceRouter.java:349)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: java.lang.IllegalArgumentException: Positional parameter does not exist: 1 in query: select id from Member where phoneNumber = ?\r\n\tat org.hibernate.impl.AbstractQueryImpl.setParameter(AbstractQueryImpl.java:359)\r\n\tat org.hibernate.impl.AbstractQueryImpl.setString(AbstractQueryImpl.java:481)\r\n\tat com.xtrainning.hop.dao.MemberDAO$2.doInHibernate(MemberDAO.java:72)\r\n\tat com.xtrainning.hop.dao.MemberDAO$2.doInHibernate(MemberDAO.java:1)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:406)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.execute(HibernateTemplate.java:339)\r\n\tat com.xtrainning.hop.dao.MemberDAO.getByPhoneNumber(MemberDAO.java:67)\r\n\tat com.xtrainning.hop.resolver.MemberResolver.checkMemberByPhoneNumber(MemberResolver.java:77)\r\n\tat com.xtrainning.hop.resolver.MemberResolver$$FastClassByCGLIB$$93c58086.invoke(<generated>)\r\n\tat net.sf.cglib.proxy.MethodProxy.invoke(MethodProxy.java:191)\r\n\tat org.springframework.aop.framework.Cglib2AopProxy$CglibMethodInvocation.invokeJoinpoint(Cglib2AopProxy.java:689)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)\r\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:110)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)\r\n\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)\r\n\tat org.springframework.aop.framework.Cglib2AopProxy$DynamicAdvisedInterceptor.intercept(Cglib2AopProxy.java:622)\r\n\tat com.xtrainning.hop.resolver.MemberResolver$$EnhancerByCGLIB$$4bbbf612.checkMemberByPhoneNumber(<generated>)\r\n\tat com.xtrainning.hop.service.mobile.MemberService.preSignUp(MemberService.java:49)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat com.rop.impl.AnnotationServiceMethodAdapter.invokeServiceMethod(AnnotationServiceMethodAdapter.java:46)\r\n\t... 9 more\r\n"}]}
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:14:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:14:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:14:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:14:21 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"1","message":"服务不可用","solution":"服务目前无法使用，请保存好错误信息并和服务平台管理员联系","subErrors":[{"code":"isp.member-preSignUp-service-unavailable","message":"调用后端服务member.preSignUp抛异常:java.lang.ClassCastException，服务不可用。\n异常信息:\njava.lang.RuntimeException: java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer\r\n\tat com.rop.impl.AnnotationServiceMethodAdapter.invokeServiceMethod(AnnotationServiceMethodAdapter.java:54)\r\n\tat com.rop.impl.AnnotationServletServiceRouter.doService(AnnotationServletServiceRouter.java:515)\r\n\tat com.rop.impl.AnnotationServletServiceRouter.access$600(AnnotationServletServiceRouter.java:40)\r\n\tat com.rop.impl.AnnotationServletServiceRouter$ServiceRunnable.run(AnnotationServletServiceRouter.java:349)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer\r\n\tat com.xtrainning.hop.dao.MemberSmsHistoryDAO$2.doInHibernate(MemberSmsHistoryDAO.java:68)\r\n\tat com.xtrainning.hop.dao.MemberSmsHistoryDAO$2.doInHibernate(MemberSmsHistoryDAO.java:1)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:406)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.execute(HibernateTemplate.java:339)\r\n\tat com.xtrainning.hop.dao.MemberSmsHistoryDAO.getTodayMaxSms(MemberSmsHistoryDAO.java:59)\r\n\tat com.xtrainning.hop.resolver.MemberResolver.checkMemberSmsNum(MemberResolver.java:138)\r\n\tat com.xtrainning.hop.resolver.MemberResolver$$FastClassByCGLIB$$93c58086.invoke(<generated>)\r\n\tat net.sf.cglib.proxy.MethodProxy.invoke(MethodProxy.java:191)\r\n\tat org.springframework.aop.framework.Cglib2AopProxy$CglibMethodInvocation.invokeJoinpoint(Cglib2AopProxy.java:689)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)\r\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:110)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)\r\n\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)\r\n\tat org.springframework.aop.framework.Cglib2AopProxy$DynamicAdvisedInterceptor.intercept(Cglib2AopProxy.java:622)\r\n\tat com.xtrainning.hop.resolver.MemberResolver$$EnhancerByCGLIB$$4bbbf612.checkMemberSmsNum(<generated>)\r\n\tat com.xtrainning.hop.service.mobile.MemberService.preSignUp(MemberService.java:57)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat com.rop.impl.AnnotationServiceMethodAdapter.invokeServiceMethod(AnnotationServiceMethodAdapter.java:46)\r\n\t... 9 more\r\n"}]}
+2014.06.20 12:15:43 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:15:43 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:15:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:15:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:15:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:15:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:15:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:15:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:15:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:15:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:15:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:15:58 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"1","message":"服务不可用","solution":"服务目前无法使用，请保存好错误信息并和服务平台管理员联系","subErrors":[{"code":"isp.member-preSignUp-service-unavailable","message":"调用后端服务member.preSignUp抛异常:org.springframework.dao.DataIntegrityViolationException，服务不可用。\n异常信息:\njava.lang.RuntimeException: org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value: com.xtrainning.hop.entity.MemberSmsHistory.status; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value: com.xtrainning.hop.entity.MemberSmsHistory.status\r\n\tat com.rop.impl.AnnotationServiceMethodAdapter.invokeServiceMethod(AnnotationServiceMethodAdapter.java:54)\r\n\tat com.rop.impl.AnnotationServletServiceRouter.doService(AnnotationServletServiceRouter.java:515)\r\n\tat com.rop.impl.AnnotationServletServiceRouter.access$600(AnnotationServletServiceRouter.java:40)\r\n\tat com.rop.impl.AnnotationServletServiceRouter$ServiceRunnable.run(AnnotationServletServiceRouter.java:349)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value: com.xtrainning.hop.entity.MemberSmsHistory.status; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value: com.xtrainning.hop.entity.MemberSmsHistory.status\r\n\tat org.springframework.orm.hibernate3.SessionFactoryUtils.convertHibernateAccessException(SessionFactoryUtils.java:665)\r\n\tat org.springframework.orm.hibernate3.HibernateAccessor.convertHibernateAccessException(HibernateAccessor.java:412)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:411)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.executeWithNativeSession(HibernateTemplate.java:374)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.save(HibernateTemplate.java:683)\r\n\tat com.xtrainning.hop.dao.MemberSmsHistoryDAO.save(MemberSmsHistoryDAO.java:33)\r\n\tat com.xtrainning.hop.resolver.MemberResolver.createVcode(MemberResolver.java:95)\r\n\tat com.xtrainning.hop.resolver.MemberResolver$$FastClassByCGLIB$$93c58086.invoke(<generated>)\r\n\tat net.sf.cglib.proxy.MethodProxy.invoke(MethodProxy.java:191)\r\n\tat org.springframework.aop.framework.Cglib2AopProxy$CglibMethodInvocation.invokeJoinpoint(Cglib2AopProxy.java:689)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)\r\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:110)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)\r\n\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)\r\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)\r\n\tat org.springframework.aop.framework.Cglib2AopProxy$DynamicAdvisedInterceptor.intercept(Cglib2AopProxy.java:622)\r\n\tat com.xtrainning.hop.resolver.MemberResolver$$EnhancerByCGLIB$$96d96603.createVcode(<generated>)\r\n\tat com.xtrainning.hop.service.mobile.MemberService.preSignUp(MemberService.java:64)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat com.rop.impl.AnnotationServiceMethodAdapter.invokeServiceMethod(AnnotationServiceMethodAdapter.java:46)\r\n\t... 9 more\r\nCaused by: org.hibernate.PropertyValueException: not-null property references a null or transient value: com.xtrainning.hop.entity.MemberSmsHistory.status\r\n\tat org.hibernate.engine.Nullability.checkNullability(Nullability.java:95)\r\n\tat org.hibernate.event.def.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:313)\r\n\tat org.hibernate.event.def.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:204)\r\n\tat org.hibernate.event.def.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:144)\r\n\tat org.hibernate.event.def.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:210)\r\n\tat org.hibernate.event.def.DefaultSaveEventListener.saveWithGeneratedOrRequestedId(DefaultSaveEventListener.java:56)\r\n\tat org.hibernate.event.def.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:195)\r\n\tat org.hibernate.event.def.DefaultSaveEventListener.performSaveOrUpdate(DefaultSaveEventListener.java:50)\r\n\tat org.hibernate.event.def.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:93)\r\n\tat org.hibernate.impl.SessionImpl.fireSave(SessionImpl.java:562)\r\n\tat org.hibernate.impl.SessionImpl.save(SessionImpl.java:550)\r\n\tat org.hibernate.impl.SessionImpl.save(SessionImpl.java:546)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate$12.doInHibernate(HibernateTemplate.java:686)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate$12.doInHibernate(HibernateTemplate.java:1)\r\n\tat org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:406)\r\n\t... 29 more\r\n"}]}
+2014.06.20 12:16:48 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:16:48 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:16:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:16:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:16:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:16:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:16:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:16:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:16:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:16:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:16:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:03 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:17:45 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:17:45 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:46 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:17:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:17:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:46 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:17:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:17:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:46 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:17:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:17:46 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:46 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:17:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:17:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:49 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:17:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:17:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:17:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:17:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:17:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:17:50 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:17:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:18:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:18:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:04 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:18:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:18:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:04 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:18:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:18:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:18:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:18:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:18:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:18:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:18:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:18:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:18:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:18:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:18:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:18:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:15 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:15 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:15 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:18:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:18:22 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:22:31 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:22:31 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:22:32 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:22:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:22:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:22:33 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:22:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:22:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:22:33 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:22:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:22:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:22:38 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:23:32 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:23:32 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:33 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:23:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:23:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:33 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:23:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:23:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:33 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:23:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:23:33 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:33 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":2,"msg":"The phone number already exceeds max sign up sms num."}
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:42 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:42 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:42 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:23:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:23:50 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":2,"msg":"The phone number already exceeds max sign up sms num."}
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:24:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:24:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:24:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:24:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:24:22 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":2,"msg":"The phone number already exceeds max sign up sms num."}
+2014.06.20 12:28:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:28:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:28:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:28:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:28:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:28:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:28:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:28:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:28:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:28:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:28:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:29:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:46:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.20 12:46:49 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:46:51 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.20 12:46:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.20 12:46:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:46:51 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.20 12:46:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.20 12:46:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:46:51 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.20 12:46:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.20 12:46:51 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:47:07 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"The phone number is already registered."}
+2014.06.20 12:47:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.20 12:47:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.20 12:47:07 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"1","message":"服务不可用","solution":"服务目前无法使用，请保存好错误信息并和服务平台管理员联系","subErrors":[{"code":"isp.member-signUp-service-unavailable","message":"调用后端服务member.signUp抛异常:java.lang.IllegalArgumentException，服务不可用。\n异常信息:\njavax.validation.ValidationException: Unable to initialize org.hibernate.validator.constraints.impl.PatternValidator\r\n\tat org.hibernate.validator.engine.ConstraintTree.initializeConstraint(ConstraintTree.java:444)\r\n\tat org.hibernate.validator.engine.ConstraintTree.createAndInitializeValidator(ConstraintTree.java:346)\r\n\tat org.hibernate.validator.engine.ConstraintTree.getInitializedValidator(ConstraintTree.java:323)\r\n\tat org.hibernate.validator.engine.ConstraintTree.validateConstraints(ConstraintTree.java:144)\r\n\tat org.hibernate.validator.engine.ConstraintTree.validateConstraints(ConstraintTree.java:117)\r\n\tat org.hibernate.validator.metadata.MetaConstraint.validateConstraint(MetaConstraint.java:84)\r\n\tat org.hibernate.validator.engine.ValidatorImpl.validateConstraint(ValidatorImpl.java:452)\r\n\tat org.hibernate.validator.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:397)\r\n\tat org.hibernate.validator.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:361)\r\n\tat org.hibernate.validator.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:313)\r\n\tat org.hibernate.validator.engine.ValidatorImpl.validate(ValidatorImpl.java:139)\r\n\tat org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:89)\r\n\tat org.springframework.validation.DataBinder.validate(DataBinder.java:709)\r\n\tat com.rop.impl.ServletRequestContextBuilder.doBind(ServletRequestContextBuilder.java:215)\r\n\tat com.rop.impl.ServletRequestContextBuilder.bindBusinessParams(ServletRequestContextBuilder.java:121)\r\n\tat com.rop.impl.AnnotationServletServiceRouter$ServiceRunnable.run(AnnotationServletServiceRouter.java:335)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: java.lang.IllegalArgumentException: Invalid regular expression.\r\n\tat org.hibernate.validator.constraints.impl.PatternValidator.initialize(PatternValidator.java:43)\r\n\tat org.hibernate.validator.constraints.impl.PatternValidator.initialize(PatternValidator.java:28)\r\n\tat org.hibernate.validator.engine.ConstraintTree.initializeConstraint(ConstraintTree.java:441)\r\n\t... 21 more\r\nCaused by: java.util.regex.PatternSyntaxException: Unclosed counted closure near index 5\r\n\\w{6, 6}\r\n     ^\r\n\tat java.util.regex.Pattern.error(Pattern.java:1713)\r\n\tat java.util.regex.Pattern.closure(Pattern.java:2759)\r\n\tat java.util.regex.Pattern.sequence(Pattern.java:1889)\r\n\tat java.util.regex.Pattern.expr(Pattern.java:1752)\r\n\tat java.util.regex.Pattern.compile(Pattern.java:1460)\r\n\tat java.util.regex.Pattern.<init>(Pattern.java:1133)\r\n\tat java.util.regex.Pattern.compile(Pattern.java:847)\r\n\tat org.hibernate.validator.constraints.impl.PatternValidator.initialize(PatternValidator.java:40)\r\n\t... 23 more\r\n"}]}

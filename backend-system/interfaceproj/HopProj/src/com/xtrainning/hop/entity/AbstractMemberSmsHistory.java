@@ -28,7 +28,7 @@ public abstract class AbstractMemberSmsHistory extends BaseEntity implements jav
      private String content;
      private Timestamp createTime;
      private Integer status;
-
+     private String vcode;
 
     // Constructors
 
@@ -118,7 +118,7 @@ public abstract class AbstractMemberSmsHistory extends BaseEntity implements jav
         this.createTime = createTime;
     }
     
-    @Column(name="status", nullable=false)
+    @Column(name="status")
 
     public Integer getStatus() {
         return this.status;
@@ -127,13 +127,13 @@ public abstract class AbstractMemberSmsHistory extends BaseEntity implements jav
     public void setStatus(Integer status) {
         this.status = status;
     }
-   
+    @Column(name="vcode", nullable=false, length=6)
+	public String getVcode() {
+		return vcode;
+	}
 
-
-
-
-
-
-
+	public void setVcode(String vcode) {
+		this.vcode = vcode;
+	}
 
 }

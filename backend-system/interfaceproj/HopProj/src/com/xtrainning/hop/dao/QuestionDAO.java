@@ -1,11 +1,8 @@
 package com.xtrainning.hop.dao;
 
-import java.util.List;
-import org.hibernate.LockMode;
-import org.hibernate.Query;
-import static org.hibernate.criterion.Example.create;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import com.xtrainning.hop.entity.Question;
 
@@ -17,7 +14,7 @@ import com.xtrainning.hop.entity.Question;
 	 * @see com.xtrainning.hop.entity.hop.entity.Question
   * @author MyEclipse Persistence Tools 
  */
-
+@Repository
 public class QuestionDAO extends BaseHibernateDAO  {
 	     private static final Logger log = LoggerFactory.getLogger(QuestionDAO.class);
 	
@@ -26,112 +23,11 @@ public class QuestionDAO extends BaseHibernateDAO  {
     public void save(Question transientInstance) {
         log.debug("saving Question instance");
         try {
-            getSession().save(transientInstance);
+            getHibernateTemplate().save(transientInstance);
+            getHibernateTemplate().flush();
             log.debug("save successful");
         } catch (RuntimeException re) {
             log.error("save failed", re);
-            throw re;
-        }
-    }
-    
-	public void delete(Question persistentInstance) {
-        log.debug("deleting Question instance");
-        try {
-            getSession().delete(persistentInstance);
-            log.debug("delete successful");
-        } catch (RuntimeException re) {
-            log.error("delete failed", re);
-            throw re;
-        }
-    }
-    
-    public Question findById( java.lang.Long id) {
-        log.debug("getting Question instance with id: " + id);
-        try {
-            Question instance = (Question) getSession()
-                    .get("com.hop.entity.Question", id);
-            return instance;
-        } catch (RuntimeException re) {
-            log.error("get failed", re);
-            throw re;
-        }
-    }
-    
-    
-    public List<Question> findByExample(Question instance) {
-        log.debug("finding Question instance by example");
-        try {
-            List<Question> results = (List<Question>) getSession()
-                    .createCriteria("com.hop.entity.Question")
-                    .add( create(instance) )
-            .list();
-            log.debug("find by example successful, result size: " + results.size());
-            return results;
-        } catch (RuntimeException re) {
-            log.error("find by example failed", re);
-            throw re;
-        }
-    }    
-    
-    public List findByProperty(String propertyName, Object value) {
-      log.debug("finding Question instance with property: " + propertyName
-            + ", value: " + value);
-      try {
-         String queryString = "from Question as model where model." 
-         						+ propertyName + "= ?";
-         Query queryObject = getSession().createQuery(queryString);
-		 queryObject.setParameter(0, value);
-		 return queryObject.list();
-      } catch (RuntimeException re) {
-         log.error("find by property name failed", re);
-         throw re;
-      }
-	}
-
-
-	public List findAll() {
-		log.debug("finding all Question instances");
-		try {
-			String queryString = "from Question";
-	         Query queryObject = getSession().createQuery(queryString);
-			 return queryObject.list();
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
-	}
-	
-    public Question merge(Question detachedInstance) {
-        log.debug("merging Question instance");
-        try {
-            Question result = (Question) getSession()
-                    .merge(detachedInstance);
-            log.debug("merge successful");
-            return result;
-        } catch (RuntimeException re) {
-            log.error("merge failed", re);
-            throw re;
-        }
-    }
-
-    public void attachDirty(Question instance) {
-        log.debug("attaching dirty Question instance");
-        try {
-            getSession().saveOrUpdate(instance);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
-    
-    public void attachClean(Question instance) {
-        log.debug("attaching clean Question instance");
-        try {
-            getSession().lock(instance, LockMode.NONE);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
             throw re;
         }
     }

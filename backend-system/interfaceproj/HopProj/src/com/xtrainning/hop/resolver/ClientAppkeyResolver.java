@@ -15,5 +15,9 @@ public class ClientAppkeyResolver {
 	public List<ClientAppkey> findAllClientAppkey() {
 		return clientAppkeyDao.findAll();
 	}
+	
+	public int getOsTypeByAppkey(String appKey){
+		return clientAppkeyDao.getOsTypeByAppkey(appKey);
+	}
 
 }

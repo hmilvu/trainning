@@ -66,7 +66,7 @@ public abstract class AbstractMemberExpand extends BaseEntity implements java.io
     public void setId(Long id) {
         this.id = id;
     }
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="member_id", nullable=false)
     public Member getMember() {
         return this.member;
@@ -76,7 +76,7 @@ public abstract class AbstractMemberExpand extends BaseEntity implements java.io
         this.member = member;
     }
     
-    @Column(name="uuid", unique=true, nullable=false, length=100)
+    @Column(name="uuid", unique=true, length=100)
 
     public String getUuid() {
         return this.uuid;

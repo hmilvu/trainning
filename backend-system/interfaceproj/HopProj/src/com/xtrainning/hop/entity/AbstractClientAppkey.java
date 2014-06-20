@@ -21,7 +21,7 @@ public abstract class AbstractClientAppkey extends BaseEntity implements java.io
      private String appKey;
      private String secretKey;
      private Integer status;
-
+     private Integer osType;
 
     // Constructors
 
@@ -80,13 +80,16 @@ public abstract class AbstractClientAppkey extends BaseEntity implements java.io
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    @Column(name="os_type", nullable=false)
+	public Integer getOsType() {
+		return osType;
+	}
+
+
+	public void setOsType(Integer osType) {
+		this.osType = osType;
+	}
    
-
-
-
-
-
-
-
 
 }
