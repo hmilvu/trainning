@@ -1,13 +1,22 @@
 package com.xtrainning.hop.dao;
 
+import java.sql.SQLException;
 import java.util.List;
-import org.hibernate.LockMode;
-import org.hibernate.Query;
-import static org.hibernate.criterion.Example.create;
+
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
 
+import com.xtrainning.hop.common.Constants.NEWS_STATUS;
 import com.xtrainning.hop.entity.Answer;
+import com.xtrainning.hop.entity.News;
+import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
 
 /**
  	* A data access object (DAO) providing persistence and search support for Answer entities.
@@ -17,7 +26,7 @@ import com.xtrainning.hop.entity.Answer;
 	 * @see com.xtrainning.hop.entity.hop.entity.Answer
   * @author MyEclipse Persistence Tools 
  */
-
+@Repository
 public class AnswerDAO extends BaseHibernateDAO  {
 	     private static final Logger log = LoggerFactory.getLogger(AnswerDAO.class);
 	
@@ -26,113 +35,29 @@ public class AnswerDAO extends BaseHibernateDAO  {
     public void save(Answer transientInstance) {
         log.debug("saving Answer instance");
         try {
-            getSession().save(transientInstance);
+            getHibernateTemplate().save(transientInstance);
+            getHibernateTemplate().flush();
             log.debug("save successful");
         } catch (RuntimeException re) {
             log.error("save failed", re);
             throw re;
         }
     }
-    
-	public void delete(Answer persistentInstance) {
-        log.debug("deleting Answer instance");
-        try {
-            getSession().delete(persistentInstance);
-            log.debug("delete successful");
-        } catch (RuntimeException re) {
-            log.error("delete failed", re);
-            throw re;
-        }
-    }
-    
-    public Answer findById( java.lang.Long id) {
-        log.debug("getting Answer instance with id: " + id);
-        try {
-            Answer instance = (Answer) getSession()
-                    .get("com.hop.entity.Answer", id);
-            return instance;
-        } catch (RuntimeException re) {
-            log.error("get failed", re);
-            throw re;
-        }
-    }
-    
-    
-    public List<Answer> findByExample(Answer instance) {
-        log.debug("finding Answer instance by example");
-        try {
-            List<Answer> results = (List<Answer>) getSession()
-                    .createCriteria("com.hop.entity.Answer")
-                    .add( create(instance) )
-            .list();
-            log.debug("find by example successful, result size: " + results.size());
-            return results;
-        } catch (RuntimeException re) {
-            log.error("find by example failed", re);
-            throw re;
-        }
-    }    
-    
-    public List findByProperty(String propertyName, Object value) {
-      log.debug("finding Answer instance with property: " + propertyName
-            + ", value: " + value);
-      try {
-         String queryString = "from Answer as model where model." 
-         						+ propertyName + "= ?";
-         Query queryObject = getSession().createQuery(queryString);
-		 queryObject.setParameter(0, value);
-		 return queryObject.list();
-      } catch (RuntimeException re) {
-         log.error("find by property name failed", re);
-         throw re;
-      }
+
+	@SuppressWarnings("unchecked")
+	public List<Answer> getByQuestionId(final Long questionId, final Integer pageNumber, final Integer pageSize) {
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<Answer>>() {
+			@Override
+			public List<Answer> doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				Criteria cr = session.createCriteria(Answer.class);
+				cr.createAlias("member", "m");
+				cr.add(Restrictions.eq("question.id", questionId));
+				cr.setFirstResult((pageNumber-1) * pageSize);
+				cr.setMaxResults(pageSize);
+				cr.addOrder(Order.desc("createTime"));
+				return cr.list();
+			}
+		});
 	}
-
-
-	public List findAll() {
-		log.debug("finding all Answer instances");
-		try {
-			String queryString = "from Answer";
-	         Query queryObject = getSession().createQuery(queryString);
-			 return queryObject.list();
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
-	}
-	
-    public Answer merge(Answer detachedInstance) {
-        log.debug("merging Answer instance");
-        try {
-            Answer result = (Answer) getSession()
-                    .merge(detachedInstance);
-            log.debug("merge successful");
-            return result;
-        } catch (RuntimeException re) {
-            log.error("merge failed", re);
-            throw re;
-        }
-    }
-
-    public void attachDirty(Answer instance) {
-        log.debug("attaching dirty Answer instance");
-        try {
-            getSession().saveOrUpdate(instance);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
-    
-    public void attachClean(Answer instance) {
-        log.debug("attaching clean Answer instance");
-        try {
-            getSession().lock(instance, LockMode.NONE);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
 }

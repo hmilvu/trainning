@@ -22,9 +22,7 @@ import com.xtrainning.hop.entity.MemberFollowQuestion;
  */
 @Repository
 public class MemberFollowQuestionDAO extends BaseHibernateDAO  {
-	     private static final Logger log = LoggerFactory.getLogger(MemberFollowQuestionDAO.class);
-	
-
+	private static final Logger log = LoggerFactory.getLogger(MemberFollowQuestionDAO.class);
     
     public void save(MemberFollowQuestion transientInstance) {
         log.debug("saving MemberFollowQuestion instance");
@@ -37,4 +35,16 @@ public class MemberFollowQuestionDAO extends BaseHibernateDAO  {
             throw re;
         }
     }
+
+
+//    private static final String CHECK_MEMBER_FOLLOWED_QUESTION = "select count(*) from MemberFollowQuestion where question.id = ? and member.id = ? ";
+//	public long checkMemberFollowedQuestion(Long questionId, Long memberId) {
+//		@SuppressWarnings("unchecked")
+//		List<Long> list = getHibernateTemplate().find(CHECK_MEMBER_FOLLOWED_QUESTION, questionId, memberId); 
+//		if(list.size() > 0){
+//			return list.get(0);
+//		} else {
+//			return 0;
+//		}
+//	}
 }

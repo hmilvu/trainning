@@ -1,0 +1,28 @@
+2014.06.21 19:37:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 19:37:42 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:37:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:37:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:37:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:37:44 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"CE1AD1A3-0D2D-4102-88E7-3550032033EF","memberId":3}
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 19:37:44 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:37:45 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"EC917236-B106-46F0-B016-CEDA60859F9F","memberId":4}
+2014.06.21 19:37:45 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 19:37:45 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:38:15 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"1","message":"服务不可用","solution":"服务目前无法使用，请保存好错误信息并和服务平台管理员联系","subErrors":[{"code":"isp.member-getProfile-service-timeout","message":"调用member.getProfile服务超时，该服务的超时限制为30秒，请和服务平台提供商联系。"}]}
+2014.06.21 19:38:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 19:38:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 19:38:15 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}

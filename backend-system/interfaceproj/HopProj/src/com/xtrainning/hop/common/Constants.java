@@ -199,4 +199,15 @@ public class Constants {
 			return this.value;
 		}
 	}
+	
+	public enum MEMBER_QUESTION {
+		FOLLOWED(1), WARNING(1);
+		private int value;
+		private MEMBER_QUESTION(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
 }

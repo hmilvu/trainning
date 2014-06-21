@@ -15,13 +15,13 @@ public class QuestionDetailResponse extends QuestionResponse {
 	@XmlElement
 	private String description;
 	@XmlElement
-	private Integer followedNum;
+	private Integer followedNum = 0;
 	@XmlElement
-	private Integer followedFlag;
+	private Integer followedFlag = 0;
 	@XmlElement
-	private Integer commentNum;
+	private Integer commentNum = 0;
 	@XmlElement
-	private Integer warningFlag;
+	private Integer warningFlag = 0;
 	@XmlElement
 	private String createTime;
 	@XmlElement

@@ -23,6 +23,7 @@ public abstract class AbstractComment extends BaseEntity implements java.io.Seri
 
      private Long id;
      private Member member;
+     private Question question;
      private String content;
      private Timestamp createTime;
      private Integer status;
@@ -108,13 +109,15 @@ public abstract class AbstractComment extends BaseEntity implements java.io.Seri
     public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
-   
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="question_id", nullable=false)
+	public Question getQuestion() {
+		return question;
+	}
 
-
-
-
-
-
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
 
 }

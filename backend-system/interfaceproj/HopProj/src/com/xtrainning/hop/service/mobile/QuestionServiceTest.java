@@ -30,8 +30,25 @@ public class QuestionServiceTest extends TestCase{
 	public void testGetQuestionDetail() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
     	GetQuestionDetailRequest ropRequest = new GetQuestionDetailRequest();
         ropRequest.setAppVersion(APP_VERSION);
-        ropRequest.setQuestionId(3L);
+        ropRequest.setQuestionId(6L);
+        ropRequest.setMemberId(3L);
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, QuestionDetailResponse.class, METHOD.GET_QUESTION_DETAIL.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof QuestionDetailResponse);
+	}
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testGetQuestionDetail2() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	GetQuestionDetailRequest ropRequest = new GetQuestionDetailRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setQuestionId(6L);
         ropRequest.setMemberId(4L);
+        ropClient.setSessionId("A4A4C64C-58A9-4CD0-82B1-1E7581DC0895");
         ropClient.setMessageFormat(MessageFormat.json);
         CompositeResponse response = ropClient.buildClientRequest()
                                    .post(ropRequest, QuestionDetailResponse.class, METHOD.GET_QUESTION_DETAIL.getValue(), "1.0");

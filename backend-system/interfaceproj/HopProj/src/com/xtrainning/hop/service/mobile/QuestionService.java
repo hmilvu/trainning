@@ -8,12 +8,16 @@ import com.rop.annotation.NeedInSessionType;
 import com.rop.annotation.ServiceMethod;
 import com.rop.annotation.ServiceMethodBean;
 import com.rop.response.BusinessServiceErrorResponse;
+import com.xtrainning.hop.common.Constants;
 import com.xtrainning.hop.entity.Member;
+import com.xtrainning.hop.entity.SysSession;
 import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
 import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
+import com.xtrainning.hop.request.mobile.GetNewsListRequest;
 import com.xtrainning.hop.request.mobile.GetQuestionDetailRequest;
 import com.xtrainning.hop.resolver.MemberResolver;
 import com.xtrainning.hop.resolver.QuestionResolver;
+import com.xtrainning.hop.resolver.SysSessionResolver;
 import com.xtrainning.hop.resolver.TopicResolver;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
 import com.xtrainning.hop.response.mobile.AnswerResponse;
@@ -26,32 +30,22 @@ public class QuestionService extends MobileBaseService{
 	@Autowired private QuestionResolver questionResolver;
 	@Autowired private TopicResolver topicResolver;
 	@Autowired private MemberResolver memberResolver;
-	
+	@Autowired private SysSessionResolver sessionResolver;
 	@ServiceMethod(method = "question.getQuestionDetail",version = "1.0",needInSession = NeedInSessionType.NO)
     public Object getQuestionDetail(GetQuestionDetailRequest request) {
-		QuestionDetailResponse response = new QuestionDetailResponse();
-		List<AnswerResponse> list = new ArrayList<AnswerResponse>();
-		AnswerResponse r = new AnswerResponse();
-		r.setAnswerId(3L);
-		r.setAnswerContent("answer");
-		AnswerResponse r1 = new AnswerResponse();
-		r1.setAnswerId(4L);
-		r1.setAnswerContent("answer2");
-		list.add(r);
-		list.add(r1);
-		response.setAnswerList(list);
-		
-		List<TopicResponse> list2 = new ArrayList<TopicResponse>();
-		TopicResponse r3 = new TopicResponse();
-		r3.setFollowedNum(3L);
-		r3.setTopicId(1L);
-		r3.setTopicName("name");
-		TopicResponse r4 = new TopicResponse();
-		r4.setTopicId(2L);
-		r4.setFollowedNum(6L);
-		list2.add(r3);
-		list2.add(r4);
-		response.setTopicList(list2);
+		QuestionDetailResponse response = null;
+		if(request.getRopRequestContext().getSessionId() == null){
+			response = questionResolver.getQuestionById(request.getQuestionId());
+		} else {
+			SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
+			if(session.getMember().getId().longValue() == request.getMemberId()){
+				response = questionResolver.getQuestionById(request.getQuestionId(), request.getMemberId());
+			} else{
+				response = questionResolver.getQuestionById(request.getQuestionId());
+			}
+		}
+		AnswerListResponse answerList = questionResolver.getAnswerListResponse(request.getQuestionId(), 1, 10);
+		response.setAnswerList(answerList.getAnswerList());
 		
 		List<String>imageUrlList = new ArrayList<String>();
 		imageUrlList.add("url1");
@@ -63,19 +57,19 @@ public class QuestionService extends MobileBaseService{
 	
 	@ServiceMethod(method = "question.getAnswerList",version = "1.0",needInSession = NeedInSessionType.NO)
     public Object getAnswerList(GetAnswerListRequest request) {
-		AnswerListResponse response = new AnswerListResponse();
-		List<AnswerResponse> list = new ArrayList<AnswerResponse>();
-		AnswerResponse r = new AnswerResponse();
-		r.setAnswerId(3L);
-		r.setAnswerContent("answer");
-		AnswerResponse r1 = new AnswerResponse();
-		r1.setAnswerId(4L);
-		r1.setAnswerContent("answer2");
-		list.add(r);
-		list.add(r1);
-		response.setAnswerList(list);
+		request = checkPageInfo(request);
+		AnswerListResponse response = questionResolver.getAnswerListResponse(request.getQuestionId(), request.getPageNumber(), request.getPageSize());
 		return response;
-		
+	}
+	
+	private GetAnswerListRequest checkPageInfo(GetAnswerListRequest request){
+		if(request.getPageNumber() == null || request.getPageNumber() <= 0){
+			request.setPageNumber(1);
+		} 
+		if(request.getPageSize() == null || request.getPageSize() <= 0 || request.getPageSize() > 100){
+			request.setPageSize(Constants.DEFAULT_PAGE_SIZE);
+		}
+		return request;
 	}
 	
 	@ServiceMethod(method = "question.createQuestion",version = "1.0",needInSession = NeedInSessionType.YES)

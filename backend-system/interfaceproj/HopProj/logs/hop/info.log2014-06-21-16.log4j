@@ -1,0 +1,356 @@
+2014.06.21 16:09:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:09:52 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:09:55 [main] INFO  [org.apache.commons.httpclient.HttpMethodDirector] - I/O exception (java.net.ConnectException) caught when processing request: Connection refused: connect
+2014.06.21 16:09:55 [main] INFO  [org.apache.commons.httpclient.HttpMethodDirector] - Retrying request
+2014.06.21 16:10:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:10:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:10:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:10:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:14 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:10:14 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:10:14 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:14 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:10:14 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:10:14 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:21 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"A0EAEB41-DEE2-4288-8401-76C2525781AD","memberId":3}
+2014.06.21 16:10:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:10:21 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"8BC9410B-72C4-4E9C-8141-8FD665C59056","memberId":4}
+2014.06.21 16:10:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:10:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:10:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:10:23 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:23 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"741B65CB-1CA3-4F56-88D0-A7222F64381B","memberId":3}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"2CD7034D-2D05-4B7F-9260-F3B22E3DAD30","memberId":4}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:10:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:10:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"58BA8CCF-FB1D-4009-821A-69E5FBB61CAA","memberId":3}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"5523CB81-0638-4130-9E52-BC902CBF5F8C","memberId":4}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:12:18 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:18 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:26 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:26 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:26 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:26 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"43A83E73-6B13-4789-9539-9A80A98D158F","memberId":3}
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:12:26 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:12:26 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"6D59F578-931C-4E83-A92E-3DA25E061D7C","memberId":4}
+2014.06.21 16:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:13:02 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"EE774F66-D428-42CA-871E-5025B0E381C9","memberId":3}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"9013A7FD-2B16-4CC3-BA09-A593A87BF5B8","memberId":4}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:13:08 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:08 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:13:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:13:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:13:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:13:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:13:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:13:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:13:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:13:13 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:13 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"63B7B7F4-5D55-4395-B042-6297E4D8B088","memberId":3}
+2014.06.21 16:13:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:13:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:55 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"A13BBCCB-D99E-46BB-82CF-F93D3023F194","memberId":4}
+2014.06.21 16:13:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:13:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:58 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:13:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:13:58 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:13:58 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:14:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:14:04 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:04 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"85A8414C-31D1-4458-9DF0-F23B4FFE5C28","memberId":3}
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"F6C14886-B4F4-42A1-8611-C02B24FBDC6D","memberId":4}
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:14:05 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:05 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"20","message":"缺少sessionId参数","solution":"将添加会话ID请求参数"}
+2014.06.21 16:14:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:14:09 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:09 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:14:10 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:14:10 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"BBCC35D9-B68F-4299-81AD-3ADC4CE65DBC","memberId":3}
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:07 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:07 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:07 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:15:07 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:07 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"C3EE128A-65E1-4B63-8FBF-59DA283A2342","memberId":3}
+2014.06.21 16:15:17 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:15:17 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:17 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"D9D7CA5B-6A66-4B03-AD87-1CFD76B892BA","memberId":4}
+2014.06.21 16:15:17 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:15:17 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:40 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:15:40 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:15:40 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:15:40 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.21 16:17:34 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:17:34 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:34 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"919FE80C-2541-49D2-810F-9D80997F749C","memberId":3}
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"A4A4C64C-58A9-4CD0-82B1-1E7581DC0895","memberId":4}
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:17:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:41 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:17:41 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:17:41 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:17:41 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"21","message":"无效的sessionId参数","solution":"无效的会话,请获取合法的会话"}
+2014.06.21 16:19:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:19:53 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:19:53 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:19:54 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:19:54 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:19:54 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"5C4FF8D5-6185-45D5-88AF-21E9941A3C5D","memberId":3}
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:19:54 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"01F459DA-F243-4CC9-B706-EAD497EBF204","memberId":4}
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:19:54 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:19:54 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:02 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:20:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:20:11 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:11 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"A7F3EE6F-E1F3-4059-B9B4-74ED23E30E49","memberId":3}
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"55C9D62A-CBA8-405E-BABD-3DAE8B7666D3","memberId":4}
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:20:12 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:12 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:20:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性
+2014.06.21 16:20:15 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetMemberIdRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
+2014.06.21 16:20:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性
+2014.06.21 16:20:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetVcodeRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already registered."}
+2014.06.21 16:20:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性
+2014.06.21 16:20:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.SignUpRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":1,"msg":"The phone number is already being used."}
+2014.06.21 16:20:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性
+2014.06.21 16:20:16 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:16 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"B95652F7-CC83-4988-B637-71514D64F5AC","memberId":3}
+2014.06.21 16:20:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性
+2014.06.21 16:20:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.ThirdLoginRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"flag":0,"msg":"success","sessionId":"079F945C-B1F5-4F50-A534-3972DC0D16A7","memberId":4}
+2014.06.21 16:20:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性
+2014.06.21 16:20:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.GetProfileRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"code":"2","message":"开发者权限不足","solution":"不足的ISV权限","subErrors":[{"code":"isv.invalid-permission","message":"权限不够、非法访问"}]}
+2014.06.21 16:20:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - 获取com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性
+2014.06.21 16:20:35 [main] DEBUG [com.rop.impl.DefaultRopContext] - com.xtrainning.hop.request.mobile.LogoffRequest不需要签名的属性:[sign, ropRequestContext]
+2014.06.21 16:20:35 [main] DEBUG [com.rop.client.DefaultRopClient] - response:
+{"memberId":2}
