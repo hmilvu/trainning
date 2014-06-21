@@ -21,7 +21,9 @@ import com.xtrainning.hop.request.mobile.GetMemberIdRequest;
 import com.xtrainning.hop.request.mobile.GetProfileRequest;
 import com.xtrainning.hop.request.mobile.GetVcodeRequest;
 import com.xtrainning.hop.request.mobile.LoginRequest;
+import com.xtrainning.hop.request.mobile.LogoffRequest;
 import com.xtrainning.hop.request.mobile.SignUpRequest;
+import com.xtrainning.hop.request.mobile.ThirdLoginRequest;
 import com.xtrainning.hop.response.mobile.LoginResponse;
 import com.xtrainning.hop.response.mobile.MemberIdResponse;
 import com.xtrainning.hop.response.mobile.MemberResponse;
@@ -36,6 +38,7 @@ public class MemberServiceTest extends TestCase{
     public static final String APP_SECRET = "b3rl8DPBrc0ka4wxhisVrT4nMUL2Crtk";
     private static DefaultRopClient ropClient = new DefaultRopClient(SERVER_URL, APP_KEY, APP_SECRET);
     private static final String OPENUUID = "22345678917";
+    private static String sessionId;
     @SuppressWarnings("rawtypes")
 	@Test
 	public void testGetMemberId() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
@@ -66,37 +69,6 @@ public class MemberServiceTest extends TestCase{
     	assertNotNull(response);
     }
     
-    @SuppressWarnings("rawtypes")
-	@Test
-	public void testLogin() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
-    	LoginRequest ropRequest = new LoginRequest();
-        ropRequest.setAppVersion(APP_VERSION);
-        ropRequest.setPhoneNumber("13116149383");
-        ropRequest.setPassword("asdfasfe");
-        ropClient.setMessageFormat(MessageFormat.json);
-        CompositeResponse response = ropClient.buildClientRequest()
-                                   .post(ropRequest, LoginResponse.class, METHOD.LOGIN.getValue(), "1.0");
-        assertNotNull(response);
-        assertTrue(response.isSuccessful());
-        assertNotNull(response.getSuccessResponse());
-        assertTrue(response.getSuccessResponse() instanceof LoginResponse);
-	}
-    
-    @SuppressWarnings("rawtypes")
-	@Test
-	public void testGetProfile() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
-    	GetProfileRequest ropRequest = new GetProfileRequest();
-        ropRequest.setAppVersion(APP_VERSION);
-        ropRequest.setMemberId(3L);
-        ropClient.setSessionId("asdfasfasdfasdfasdf32sasdfasfasdf");
-        ropClient.setMessageFormat(MessageFormat.json);
-        CompositeResponse response = ropClient.buildClientRequest()
-                                   .post(ropRequest, ProfileResponse.class, METHOD.GET_PROFILE.getValue(), "1.0");
-        assertNotNull(response);
-        assertTrue(response.isSuccessful());
-        assertNotNull(response.getSuccessResponse());
-        assertTrue(response.getSuccessResponse() instanceof ProfileResponse);
-	}
     @SuppressWarnings("rawtypes")
 	@Test
 	public void testPreSignUp() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
@@ -132,6 +104,59 @@ public class MemberServiceTest extends TestCase{
         LoginResponse successResponse = (LoginResponse)response.getSuccessResponse();
         ropClient.setSessionId(successResponse.getSessionId());
 	}
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testLogin() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	LoginRequest ropRequest = new LoginRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setPhoneNumber("22345678901");
+        ropRequest.setPassword("123456");
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, LoginResponse.class, METHOD.LOGIN.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof LoginResponse);
+        sessionId = ((LoginResponse)response.getSuccessResponse()).getSessionId();
+	}
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testThirdLogin() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	ThirdLoginRequest ropRequest = new ThirdLoginRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setThirdPartyId("thirdPartyId");
+        ropRequest.setNickName("steven");
+        ropRequest.setAvatarUrl("url");
+        ropRequest.setSex(1);
+        ropRequest.setType(1);
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, LoginResponse.class, METHOD.THIRD_LOGIN.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof LoginResponse);
+	}
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testGetProfile() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	GetProfileRequest ropRequest = new GetProfileRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setMemberId(3L);
+        ropClient.setSessionId(sessionId);
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, ProfileResponse.class, METHOD.GET_PROFILE.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof ProfileResponse);
+	}
+    
     /*@SuppressWarnings("rawtypes")
 	@Test
 	public void testUpdateProfile() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
@@ -194,4 +219,21 @@ public class MemberServiceTest extends TestCase{
         BaseAdminResponse successResponse = (BaseAdminResponse)response.getSuccessResponse();
         assertTrue(successResponse.getFlag() == 0);
 	}*/
+    
+    @SuppressWarnings("rawtypes")
+	@Test
+	public void testLogoff() throws IntrospectionException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    	LogoffRequest ropRequest = new LogoffRequest();
+        ropRequest.setAppVersion(APP_VERSION);
+        ropRequest.setMemberId(3L);
+        ropRequest.setOpenuuid(OPENUUID);
+        ropClient.setSessionId(sessionId);
+        ropClient.setMessageFormat(MessageFormat.json);
+        CompositeResponse response = ropClient.buildClientRequest()
+                                   .post(ropRequest, LoginResponse.class, METHOD.LOGOFF.getValue(), "1.0");
+        assertNotNull(response);
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.getSuccessResponse());
+        assertTrue(response.getSuccessResponse() instanceof LoginResponse);
+	}
 }

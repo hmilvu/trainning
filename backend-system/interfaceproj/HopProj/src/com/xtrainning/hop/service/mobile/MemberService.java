@@ -18,6 +18,7 @@ import com.xtrainning.hop.request.mobile.GetMemberIdRequest;
 import com.xtrainning.hop.request.mobile.GetProfileRequest;
 import com.xtrainning.hop.request.mobile.GetVcodeRequest;
 import com.xtrainning.hop.request.mobile.LoginRequest;
+import com.xtrainning.hop.request.mobile.LogoffRequest;
 import com.xtrainning.hop.request.mobile.SignUpRequest;
 import com.xtrainning.hop.request.mobile.ThirdLoginRequest;
 import com.xtrainning.hop.resolver.MemberResolver;
@@ -113,12 +114,12 @@ public class MemberService extends MobileBaseService{
     public Object login(LoginRequest request) {	
 		Long memberId = memberResolver.checkMemberByCredentials(request.getPhoneNumber(), request.getPassword());	
 		if(memberId != null && memberId > 0){
-			LoginResponse response = new LoginResponse();
-			response.setFlag(1);
-			response.setMsg("User name and password are incorrect.");
+			LoginResponse response = setupLoginSuccessResponse(request, memberId);
 			return response;
 		}
-		LoginResponse response = setupLoginSuccessResponse(request, memberId);
+		LoginResponse response = new LoginResponse();
+		response.setFlag(1);
+		response.setMsg("User name and password are incorrect.");
 		return response;
 	}
 	
@@ -131,22 +132,32 @@ public class MemberService extends MobileBaseService{
         			request.getRopRequestContext().getLocale(), request.getType());
 		}
 		Long memberId = memberResolver.checkMemberByThirdPartyId(request.getThirdPartyId(), request.getType());	
-		if(memberId != null && memberId > 0){
-			LoginResponse response = setupLoginSuccessResponse(request, memberId);
-			return response;
+		if(memberId == null || memberId == 0){
+			memberId = memberResolver.thirdSignUp(request);		
 		}
-		Long newMemberId = memberResolver.thirdSignUp(request);		
-		LoginResponse response = setupLoginSuccessResponse(request, newMemberId);
+		LoginResponse response = setupLoginSuccessResponse(request, memberId);
 		return response;
 	}
 	
+	@ServiceMethod(method = "member.logoff",version = "1.0", needInSession = NeedInSessionType.YES, httpAction = HttpAction.POST)
+    public Object logoff(LogoffRequest request) {	
+		SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
+		if(session.getMember().getId().longValue() == request.getMemberId()){
+			request.getRopRequestContext().removeSession();
+		}
+		GetMemberIdRequest newRequest = new GetMemberIdRequest();
+		newRequest.setOpenuuid(request.getOpenuuid());
+		return getMemberId(newRequest);
+	}
+	
 	@ServiceMethod(method = "member.getProfile",version = "1.0", needInSession = NeedInSessionType.YES)
-    public Object getProfile(GetProfileRequest request) {		
-		ProfileResponse response = new ProfileResponse();
-		response.setMemberId(3L);
-		response.setMemberIntroduction("好好学习天天向上");
-		response.setNickName("爽爽");
-		response.setSex(0);
+    public Object getProfile(GetProfileRequest request) {	
+		SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
+		if(session.getMember().getId().longValue() != request.getMemberId()){
+			ProfileResponse response = new ProfileResponse();
+			return response;
+		}
+		ProfileResponse response = memberResolver.getMemberProfile(request.getMemberId());
 		return response;
 	
 	}

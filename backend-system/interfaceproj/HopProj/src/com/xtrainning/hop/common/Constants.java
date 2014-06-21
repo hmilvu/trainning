@@ -14,6 +14,8 @@ public class Constants {
 		PRE_SIGN_UP("member.preSignUp"),
 		SIGN_UP("member.signUp"),
 		LOGIN("member.login"),
+		LOGOFF("member.logoff"),
+		THIRD_LOGIN("member.thirdLogin"),
 		GET_PROFILE("member.getProfile"),
 		
 		GET_NEWS_LIST("news.getNewsList"),

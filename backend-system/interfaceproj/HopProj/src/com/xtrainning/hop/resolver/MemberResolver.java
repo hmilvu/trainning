@@ -26,6 +26,7 @@ import com.xtrainning.hop.entity.MemberSmsHistory;
 import com.xtrainning.hop.request.mobile.GetMemberIdRequest;
 import com.xtrainning.hop.request.mobile.SignUpRequest;
 import com.xtrainning.hop.request.mobile.ThirdLoginRequest;
+import com.xtrainning.hop.response.mobile.ProfileResponse;
 @Service
 public class MemberResolver extends BaseResolver{
 
@@ -185,6 +186,12 @@ public class MemberResolver extends BaseResolver{
 		memberExpandDao.save(ex);
 		
 		return m.getId();
+	}
+
+	public ProfileResponse getMemberProfile(Long memberId) {
+		Member member = memberDao.findById(memberId);
+		ProfileResponse response = member.toResponse();		
+		return response;
 	}
     
     
