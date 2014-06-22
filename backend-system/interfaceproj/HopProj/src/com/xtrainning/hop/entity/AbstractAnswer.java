@@ -31,7 +31,7 @@ public abstract class AbstractAnswer extends BaseEntity implements java.io.Seria
      private String content;
      private Timestamp createTime;
      private Timestamp updateTime;
-     private Integer supportNum;
+     private Integer supportNum = 0;
      private Set<MemberSupportAnswer> memberSupportAnswers = new HashSet<MemberSupportAnswer>(0);
      private Set<News> newses = new HashSet<News>(0);
 

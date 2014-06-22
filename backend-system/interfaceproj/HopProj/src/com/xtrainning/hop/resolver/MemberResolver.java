@@ -14,11 +14,13 @@ import com.xtrainning.hop.common.Constants;
 import com.xtrainning.hop.common.Constants.MEMBER_GENDER;
 import com.xtrainning.hop.common.Constants.MEMBER_REGISTER_STATUS;
 import com.xtrainning.hop.common.Constants.MEMBER_STATUS;
+import com.xtrainning.hop.common.Constants.MEMBER_TOPIC;
 import com.xtrainning.hop.common.Constants.MEMBER_TYPE;
 import com.xtrainning.hop.common.Constants.PUSH_STATUS;
 import com.xtrainning.hop.common.Constants.SMS_TYPE;
 import com.xtrainning.hop.dao.MemberDAO;
 import com.xtrainning.hop.dao.MemberExpandDAO;
+import com.xtrainning.hop.dao.MemberFollowTopicDAO;
 import com.xtrainning.hop.dao.MemberSmsHistoryDAO;
 import com.xtrainning.hop.entity.Member;
 import com.xtrainning.hop.entity.MemberExpand;
@@ -34,7 +36,7 @@ public class MemberResolver extends BaseResolver{
 	@Autowired private MemberExpandDAO memberExpandDao;
 	@Autowired private ClientAppkeyResolver appKeyResolver;
 	@Autowired private MemberSmsHistoryDAO memberSmsHistoryDao;
-	
+	@Autowired private MemberFollowTopicDAO memberFollowTopicDAO;
     @Cacheable(value="MemberResolver.getMemberByUUID")
 	public Member getMemberByUUID(String openuuid) {
 		MemberExpand memberExpand = memberExpandDao.getByOpenuuid(openuuid);
@@ -52,7 +54,6 @@ public class MemberResolver extends BaseResolver{
 		m.setSex(MEMBER_GENDER.UNKNOW.getValue());
 		m.setCreateTime(new Timestamp(new Date().getTime()));
 		m.setPushStatus(PUSH_STATUS.ON.getValue());
-		m.setCodeTime(m.getCreateTime());
 		m.setLastAccessTime(m.getCreateTime());
 		memberDao.save(m);
 		
@@ -106,7 +107,6 @@ public class MemberResolver extends BaseResolver{
 		m.setSex(request.getSex());
 		m.setCreateTime(new Timestamp(new Date().getTime()));
 		m.setPushStatus(PUSH_STATUS.ON.getValue());
-		m.setCodeTime(m.getCreateTime());
 		m.setLastAccessTime(m.getCreateTime());
 		m.setPassword(request.getPassword());
 		m.setPhoneNumber(request.getPhoneNumber());
@@ -171,7 +171,6 @@ public class MemberResolver extends BaseResolver{
 		m.setSex(request.getSex());
 		m.setCreateTime(new Timestamp(new Date().getTime()));
 		m.setPushStatus(PUSH_STATUS.ON.getValue());
-		m.setCodeTime(m.getCreateTime());
 		m.setLastAccessTime(m.getCreateTime());
 		m.setNickName(request.getNickName());
 		m.setAvatarUrl(request.getAvatarUrl());
@@ -192,6 +191,15 @@ public class MemberResolver extends BaseResolver{
 		Member member = memberDao.findById(memberId);
 		ProfileResponse response = member.toResponse();		
 		return response;
+	}
+
+	public int checkMemberFollowTopicFlag(Long memberId, Long topicId) {
+		Long count = memberFollowTopicDAO.getFollowTopicFlag(memberId, topicId);
+		if(count != null && count > 0){
+			return MEMBER_TOPIC.FOLLOWED.getValue();
+		} else {
+			return MEMBER_TOPIC.NOT_FOLLOWED.getValue();
+		}
 	}
     
     

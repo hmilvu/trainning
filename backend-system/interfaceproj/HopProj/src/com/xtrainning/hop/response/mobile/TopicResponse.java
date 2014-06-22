@@ -13,7 +13,9 @@ public class TopicResponse extends MobileBaseResponse {
 	@XmlElement
 	private String topicName;
 	@XmlElement
-	private Long followedNum = 0L;
+	private Integer followedNum = 0;
+	@XmlElement
+	private Integer followedFlag = 0;
 	@XmlElement
 	private List<QuestionResponse> questionList;
 	public Long getTopicId() {
@@ -22,10 +24,10 @@ public class TopicResponse extends MobileBaseResponse {
 	public void setTopicId(Long topicId) {
 		this.topicId = topicId;
 	}
-	public Long getFollowedNum() {
+	public Integer getFollowedNum() {
 		return followedNum == null ? 0 : followedNum;
 	}
-	public void setFollowedNum(Long followedNum) {
+	public void setFollowedNum(Integer followedNum) {
 		this.followedNum = followedNum;
 	}
 	public List<QuestionResponse> getQuestionList() {
@@ -39,6 +41,12 @@ public class TopicResponse extends MobileBaseResponse {
 	}
 	public void setTopicName(String topicName) {
 		this.topicName = topicName;
+	}
+	public Integer getFollowedFlag() {
+		return followedFlag;
+	}
+	public void setFollowedFlag(Integer followedFlag) {
+		this.followedFlag = followedFlag;
 	}
 	
 	

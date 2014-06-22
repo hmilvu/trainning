@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.xtrainning.hop.response.mobile.TopicResponse;
+
 
 /**
  * Topic entity. @author MyEclipse Persistence Tools
@@ -30,5 +32,13 @@ public class Topic extends AbstractTopic implements java.io.Serializable {
     public Topic(String name, Integer status, Timestamp createTime, Integer followNum, String typeCode, Set<QuestionTopic> questionTopics, Set<MemberFollowTopic> memberFollowTopics) {
         super(name, status, createTime, followNum, typeCode, questionTopics, memberFollowTopics);        
     }
+
+	public TopicResponse toResponse() {
+		TopicResponse r = new TopicResponse();
+		r.setTopicId(getId());
+		r.setTopicName(getName());
+		r.setFollowedNum(getFollowNum());
+		return r;
+	}
    
 }

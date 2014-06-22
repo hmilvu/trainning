@@ -3,9 +3,11 @@ package com.xtrainning.hop.dao;
 import java.math.BigInteger;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Map;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
@@ -14,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
-import com.xtrainning.hop.common.Constants.MEMBER_QUESTION;
 import com.xtrainning.hop.entity.Question;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
 import com.xtrainning.hop.utils.DateUtils;
@@ -29,7 +30,7 @@ import com.xtrainning.hop.utils.DateUtils;
  */
 @Repository
 public class QuestionDAO extends BaseHibernateDAO  {
-	     private static final Logger log = LoggerFactory.getLogger(QuestionDAO.class);
+	private static final Logger log = LoggerFactory.getLogger(QuestionDAO.class);
 	
 
     
@@ -116,6 +117,41 @@ public class QuestionDAO extends BaseHibernateDAO  {
 		});
 	}
 
+	public Question getById(Long questionId) {
+		return getHibernateTemplate().get(Question.class, questionId);
+	}
+
+    private static final String GET_TOPIC_QUESTION = "select q.* from Question q left outer join QuestionTopic qt " +
+    		"on qt.question.id = q.id " +
+    		"where q.question = ? and qt.topic.id = ? " +
+    		"order by q.followNum desc, q.createTime desc";
+	@SuppressWarnings("unchecked")
+	public List<Question> getByTopicId(final Long topicId, final int maxNum) {
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<Question>>() {
+			@Override
+			public List<Question> doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				Query q = session.createQuery(GET_TOPIC_QUESTION);
+				q.setMaxResults(maxNum);
+				return q.list();
+			}
+		});
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Question> getByTopicId(final Long topicId, final Integer pageNumber,
+			final Integer pageSize) {
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<Question>>() {
+			@Override
+			public List<Question> doInHibernate(Session session) throws HibernateException,
+					SQLException {
+				Query q = session.createQuery(GET_TOPIC_QUESTION);
+				q.setFirstResult((pageNumber-1) * pageSize);
+				q.setMaxResults(pageSize);
+				return q.list();
+			}
+		});
+	}
 
 
 }

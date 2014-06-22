@@ -9,7 +9,7 @@ public class SimpleResponse extends MobileBaseResponse {
 	@XmlElement
 	private Integer flag = 0;
 	@XmlElement
-	private String msg;
+	private String msg = "";
 	public Integer getFlag() {
 		return flag;
 	}

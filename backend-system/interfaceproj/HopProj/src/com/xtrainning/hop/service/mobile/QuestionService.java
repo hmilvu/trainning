@@ -10,20 +10,19 @@ import com.rop.annotation.ServiceMethodBean;
 import com.rop.response.BusinessServiceErrorResponse;
 import com.xtrainning.hop.common.Constants;
 import com.xtrainning.hop.entity.Member;
+import com.xtrainning.hop.entity.Question;
 import com.xtrainning.hop.entity.SysSession;
+import com.xtrainning.hop.request.mobile.CreateAnswerRequest;
 import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
 import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
-import com.xtrainning.hop.request.mobile.GetNewsListRequest;
 import com.xtrainning.hop.request.mobile.GetQuestionDetailRequest;
 import com.xtrainning.hop.resolver.MemberResolver;
 import com.xtrainning.hop.resolver.QuestionResolver;
 import com.xtrainning.hop.resolver.SysSessionResolver;
 import com.xtrainning.hop.resolver.TopicResolver;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
-import com.xtrainning.hop.response.mobile.AnswerResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
 import com.xtrainning.hop.response.mobile.SimpleResponse;
-import com.xtrainning.hop.response.mobile.TopicResponse;
 
 @ServiceMethodBean
 public class QuestionService extends MobileBaseService{
@@ -35,13 +34,13 @@ public class QuestionService extends MobileBaseService{
     public Object getQuestionDetail(GetQuestionDetailRequest request) {
 		QuestionDetailResponse response = null;
 		if(request.getRopRequestContext().getSessionId() == null){
-			response = questionResolver.getQuestionById(request.getQuestionId());
+			response = questionResolver.getQuestionDetailResponseById(request.getQuestionId());
 		} else {
 			SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
 			if(session.getMember().getId().longValue() == request.getMemberId()){
-				response = questionResolver.getQuestionById(request.getQuestionId(), request.getMemberId());
+				response = questionResolver.getQuestionDetailResponseById(request.getQuestionId(), request.getMemberId());
 			} else{
-				response = questionResolver.getQuestionById(request.getQuestionId());
+				response = questionResolver.getQuestionDetailResponseById(request.getQuestionId());
 			}
 		}
 		AnswerListResponse answerList = questionResolver.getAnswerListResponse(request.getQuestionId(), 1, 10);
@@ -81,6 +80,24 @@ public class QuestionService extends MobileBaseService{
         			request.getRopRequestContext().getLocale(), request.getMemberId());
 		}
 		questionResolver.createQuestion(request, m);
+		return new SimpleResponse();
+	}
+	
+	@ServiceMethod(method = "question.createAnswer",version = "1.0",needInSession = NeedInSessionType.YES)
+    public Object createAnswer(CreateAnswerRequest request) {
+		Member m = memberResolver.getMemberById(request.getMemberId());
+		if(m == null){
+			return new BusinessServiceErrorResponse(
+        			request.getRopRequestContext().getMethod(), "NO_SUCH_MEMBER",
+        			request.getRopRequestContext().getLocale(), request.getMemberId());
+		}
+		Question q = questionResolver.getQuestionById(request.getQuestionId());
+		if(q == null){
+			return new BusinessServiceErrorResponse(
+        			request.getRopRequestContext().getMethod(), "NO_SUCH_QUESTION",
+        			request.getRopRequestContext().getLocale(), request.getQuestionId());
+		}
+		questionResolver.createAnswer(q, m, request.getContent());
 		return new SimpleResponse();
 	}
 	

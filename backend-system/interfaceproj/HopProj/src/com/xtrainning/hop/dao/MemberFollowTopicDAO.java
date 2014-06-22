@@ -1,11 +1,15 @@
 package com.xtrainning.hop.dao;
 
+import java.sql.SQLException;
 import java.util.List;
-import org.hibernate.LockMode;
+
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
-import static org.hibernate.criterion.Example.create;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
 
 import com.xtrainning.hop.entity.MemberFollowTopic;
 
@@ -17,7 +21,7 @@ import com.xtrainning.hop.entity.MemberFollowTopic;
 	 * @see com.xtrainning.hop.entity.hop.entity.MemberFollowTopic
   * @author MyEclipse Persistence Tools 
  */
-
+@Repository
 public class MemberFollowTopicDAO extends BaseHibernateDAO  {
 	     private static final Logger log = LoggerFactory.getLogger(MemberFollowTopicDAO.class);
 	
@@ -26,113 +30,25 @@ public class MemberFollowTopicDAO extends BaseHibernateDAO  {
     public void save(MemberFollowTopic transientInstance) {
         log.debug("saving MemberFollowTopic instance");
         try {
-            getSession().save(transientInstance);
+            getHibernateTemplate().save(transientInstance);
+            getHibernateTemplate().flush();
             log.debug("save successful");
         } catch (RuntimeException re) {
             log.error("save failed", re);
             throw re;
         }
     }
-    
-	public void delete(MemberFollowTopic persistentInstance) {
-        log.debug("deleting MemberFollowTopic instance");
-        try {
-            getSession().delete(persistentInstance);
-            log.debug("delete successful");
-        } catch (RuntimeException re) {
-            log.error("delete failed", re);
-            throw re;
-        }
-    }
-    
-    public MemberFollowTopic findById( java.lang.Long id) {
-        log.debug("getting MemberFollowTopic instance with id: " + id);
-        try {
-            MemberFollowTopic instance = (MemberFollowTopic) getSession()
-                    .get("com.hop.entity.MemberFollowTopic", id);
-            return instance;
-        } catch (RuntimeException re) {
-            log.error("get failed", re);
-            throw re;
-        }
-    }
-    
-    
-    public List<MemberFollowTopic> findByExample(MemberFollowTopic instance) {
-        log.debug("finding MemberFollowTopic instance by example");
-        try {
-            List<MemberFollowTopic> results = (List<MemberFollowTopic>) getSession()
-                    .createCriteria("com.hop.entity.MemberFollowTopic")
-                    .add( create(instance) )
-            .list();
-            log.debug("find by example successful, result size: " + results.size());
-            return results;
-        } catch (RuntimeException re) {
-            log.error("find by example failed", re);
-            throw re;
-        }
-    }    
-    
-    public List findByProperty(String propertyName, Object value) {
-      log.debug("finding MemberFollowTopic instance with property: " + propertyName
-            + ", value: " + value);
-      try {
-         String queryString = "from MemberFollowTopic as model where model." 
-         						+ propertyName + "= ?";
-         Query queryObject = getSession().createQuery(queryString);
-		 queryObject.setParameter(0, value);
-		 return queryObject.list();
-      } catch (RuntimeException re) {
-         log.error("find by property name failed", re);
-         throw re;
-      }
+
+	public Long getFollowTopicFlag(final Long memberId, final Long topicId) {
+		return getHibernateTemplate().execute(new HibernateCallback<Long>() {
+			@Override
+			public Long doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query q = session.createQuery("select count(*) from MemberFollowTopic where member.id = ? and topic.id = ? ");
+				q.setLong(0, memberId);
+				q.setLong(1, topicId);
+				return (Long) q.uniqueResult();
+			}
+		});
 	}
-
-
-	public List findAll() {
-		log.debug("finding all MemberFollowTopic instances");
-		try {
-			String queryString = "from MemberFollowTopic";
-	         Query queryObject = getSession().createQuery(queryString);
-			 return queryObject.list();
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
-	}
-	
-    public MemberFollowTopic merge(MemberFollowTopic detachedInstance) {
-        log.debug("merging MemberFollowTopic instance");
-        try {
-            MemberFollowTopic result = (MemberFollowTopic) getSession()
-                    .merge(detachedInstance);
-            log.debug("merge successful");
-            return result;
-        } catch (RuntimeException re) {
-            log.error("merge failed", re);
-            throw re;
-        }
-    }
-
-    public void attachDirty(MemberFollowTopic instance) {
-        log.debug("attaching dirty MemberFollowTopic instance");
-        try {
-            getSession().saveOrUpdate(instance);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
-    
-    public void attachClean(MemberFollowTopic instance) {
-        log.debug("attaching clean MemberFollowTopic instance");
-        try {
-            getSession().lock(instance, LockMode.NONE);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
 }

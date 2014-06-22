@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.xtrainning.hop.common.Constants.NEWS_ACTION_TYPE;
+import com.xtrainning.hop.common.Constants.NEWS_STATUS;
 import com.xtrainning.hop.common.Constants.QUESTION_STATUS;
 import com.xtrainning.hop.common.Constants.TOPIC_STATUS;
 import com.xtrainning.hop.dao.AnswerDAO;
@@ -28,7 +29,6 @@ import com.xtrainning.hop.entity.Question;
 import com.xtrainning.hop.entity.QuestionTopic;
 import com.xtrainning.hop.entity.Topic;
 import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
-import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
 import com.xtrainning.hop.response.mobile.AnswerResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
@@ -48,7 +48,7 @@ public class QuestionResolver extends BaseResolver{
 		q.setStatus(QUESTION_STATUS.ACTIVE.getValue());
 		q.setCreateTime(new Timestamp(new Date().getTime()));
 		q.setCommentCount(0);
-		q.setFollowNum(1);
+		q.setFollowNum(0);
 		q.setMember(member);
 		questionDao.save(q);
 		
@@ -78,7 +78,7 @@ public class QuestionResolver extends BaseResolver{
 			t.setName(request.getNewTopicName());
 			t.setMember(member);
 			t.setCreateTime(new Timestamp(new Date().getTime()));
-			t.setFollowNum(1);
+			t.setFollowNum(0);
 			t.setStatus(TOPIC_STATUS.ACTIVE.getValue());
 			topicDao.save(t);
 		}
@@ -89,20 +89,20 @@ public class QuestionResolver extends BaseResolver{
 		news.setMember(member);
 		news.setMemberIntroduction(member.getIntroduction());
 		news.setMemberNickname(member.getNickName());
-		news.setStatus(QUESTION_STATUS.ACTIVE.getValue());
+		news.setStatus(NEWS_STATUS.ACTIVE.getValue());
 		news.setSupportNum(0);
 		news.setQuestion(q);
 		news.setQuestionName(q.getName());
 		newsDao.save(news);
 	}
 
-	public QuestionDetailResponse getQuestionById(Long questionId, Long memberId) {
+	public QuestionDetailResponse getQuestionDetailResponseById(Long questionId, Long memberId) {
 		QuestionDetailResponse response = questionDao.getQuestionDetailResponse(questionId, memberId);
 		return response;
 	}
 
-	@Cacheable(value="QuestionResolver.getQuestionById")
-	public QuestionDetailResponse getQuestionById(Long questionId) {
+	@Cacheable(value="QuestionResolver.getQuestionDetailResponseById")
+	public QuestionDetailResponse getQuestionDetailResponseById(Long questionId) {
 		QuestionDetailResponse response = questionDao.getQuestionDetailResponse(questionId);
 		return response;
 	}
@@ -118,6 +118,34 @@ public class QuestionResolver extends BaseResolver{
 		AnswerListResponse response = new AnswerListResponse();
 		response.setAnswerList(answerList);
 		return response;
+	}
+
+	public void createAnswer(Question q, Member m, String content) {
+		Answer a = new Answer();
+		a.setQuestion(q);
+		a.setMember(m);
+		a.setContent(content);
+		a.setCreateTime(new Timestamp(new Date().getTime()));
+		a.setUpdateTime(a.getCreateTime());
+		answerDao.save(a);
+		
+		News news = new News();
+		news.setActionType(NEWS_ACTION_TYPE.ANSWER.getValue());
+		news.setCreateTime(q.getCreateTime());
+		news.setMember(m);
+		news.setMemberIntroduction(m.getIntroduction());
+		news.setMemberNickname(m.getNickName());
+		news.setStatus(NEWS_STATUS.ACTIVE.getValue());
+		news.setSupportNum(0);
+		news.setQuestion(q);
+		news.setQuestionName(q.getName());
+		news.setAnswer(a);
+		news.setAnswerContent(content);
+		newsDao.save(news);
+	}
+
+	public Question getQuestionById(Long questionId) {
+		return questionDao.getById(questionId);
 	}
 
 }

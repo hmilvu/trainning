@@ -21,8 +21,9 @@ public class Constants {
 		GET_NEWS_LIST("news.getNewsList"),
 		
 		GET_QUESTION_DETAIL("question.getQuestionDetail"),
-		GET_ANSWER_DETAIL("question.getAnswerList"),
+		GET_ANSWER_List("question.getAnswerList"),
 		CREATE_QUESTION("question.createQuestion"),
+		CREATE_ANSWER("question.createAnswer"),
 		
 		GET_TOPIC_DETAIL("topic.getTopicDetail"),
 		GET_TOPIC_LIST("topic.getTopicList");
@@ -204,6 +205,17 @@ public class Constants {
 		FOLLOWED(1), WARNING(1);
 		private int value;
 		private MEMBER_QUESTION(int value) {
+			this.value = value;
+		}
+		public int getValue(){
+			return this.value;
+		}
+	}
+	
+	public enum MEMBER_TOPIC {
+		NOT_FOLLOWED(0), FOLLOWED(1);
+		private int value;
+		private MEMBER_TOPIC(int value) {
 			this.value = value;
 		}
 		public int getValue(){

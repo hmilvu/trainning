@@ -2,74 +2,61 @@ package com.xtrainning.hop.service.mobile;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.rop.annotation.NeedInSessionType;
 import com.rop.annotation.ServiceMethod;
 import com.rop.annotation.ServiceMethodBean;
+import com.rop.response.BusinessServiceErrorResponse;
+import com.xtrainning.hop.common.Constants;
+import com.xtrainning.hop.entity.Topic;
+import com.xtrainning.hop.request.mobile.GetNewsListRequest;
 import com.xtrainning.hop.request.mobile.GetTopicDetailRequest;
 import com.xtrainning.hop.request.mobile.GetTopicListRequest;
+import com.xtrainning.hop.resolver.TopicResolver;
 import com.xtrainning.hop.response.mobile.QuestionResponse;
 import com.xtrainning.hop.response.mobile.TopicListResponse;
 import com.xtrainning.hop.response.mobile.TopicResponse;
 
 @ServiceMethodBean
 public class TopicService extends MobileBaseService{
-//	@Autowired private MemberResolver memberResolver;
+	@Autowired private TopicResolver topicResolver;
 
 	@ServiceMethod(method = "topic.getTopicList",version = "1.0",needInSession = NeedInSessionType.YES)
     public Object getTopicList(GetTopicListRequest request) {
-//		Member m = memberResolver.fetchMemberByUUID(request);
-//		MemberIdResponse response = new MemberIdResponse();
-//		response.setMemberId(m.getId());
-		TopicListResponse response = new TopicListResponse();
-		List<TopicResponse> list = new ArrayList<TopicResponse>();
-		TopicResponse r = new TopicResponse();
-		r.setFollowedNum(3L);
-		r.setTopicId(1L);
-		r.setTopicName("name");
-		TopicResponse r1 = new TopicResponse();
-		r1.setTopicId(2L);
-		r1.setFollowedNum(6L);
-		list.add(r);
-		list.add(r1);
-		response.setTopicList(list);
-		
-		List<QuestionResponse> list2 = new ArrayList<QuestionResponse>();
-		QuestionResponse q1 = new QuestionResponse();
-		q1.setQuestionId(3L);
-		q1.setQuestionTopic("q1");
-		
-		QuestionResponse q2 = new QuestionResponse();
-		q2.setQuestionId(1L);
-		q2.setQuestionTopic("q1");
-		list2.add(q1);
-		list2.add(q2);
-		
-		r.setQuestionList(list2);
-		r1.setQuestionList(list2);
-		
+		TopicListResponse response = topicResolver.getTopicListReponse(checkPageInfo(request));
         return response;
+	}
+	
+	private GetTopicListRequest checkPageInfo(GetTopicListRequest request){
+		if(request.getPageNumber() == null || request.getPageNumber() <= 0){
+			request.setPageNumber(1);
+		} 
+		if(request.getPageSize() == null || request.getPageSize() <= 0 || request.getPageSize() > 100){
+			request.setPageSize(Constants.DEFAULT_PAGE_SIZE);
+		}
+		return request;
 	}
 	
 	@ServiceMethod(method = "topic.getTopicDetail",version = "1.0",needInSession = NeedInSessionType.NO)
     public Object getTopicDetail(GetTopicDetailRequest request) {
-		TopicResponse r = new TopicResponse();
-		r.setFollowedNum(3L);
-		r.setTopicId(1L);
-		r.setTopicName("name");
-		
-		List<QuestionResponse> list2 = new ArrayList<QuestionResponse>();
-		QuestionResponse q1 = new QuestionResponse();
-		q1.setQuestionId(3L);
-		q1.setQuestionTopic("q1");
-		
-		QuestionResponse q2 = new QuestionResponse();
-		q2.setQuestionId(1L);
-		q2.setQuestionTopic("q1");
-		list2.add(q1);
-		list2.add(q2);
-		
-		r.setQuestionList(list2);
-		
-		return r;
+		Topic t = topicResolver.getById(request.getTopicId());
+		if(t == null){
+			return new BusinessServiceErrorResponse(
+        			request.getRopRequestContext().getMethod(), "NO_SUCH_TOPIC",
+        			request.getRopRequestContext().getLocale(), request.getTopicId());
+		}
+		TopicResponse response = topicResolver.getTopicReponse(t, checkPageInfo(request));
+        return response;
+	}
+	
+	private GetTopicDetailRequest checkPageInfo(GetTopicDetailRequest request){
+		if(request.getPageNumber() == null || request.getPageNumber() <= 0){
+			request.setPageNumber(1);
+		} 
+		if(request.getPageSize() == null || request.getPageSize() <= 0 || request.getPageSize() > 100){
+			request.setPageSize(Constants.DEFAULT_PAGE_SIZE);
+		}
+		return request;
 	}
 }

@@ -3,6 +3,7 @@ package com.xtrainning.hop.entity;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -12,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
+
 import org.hibernate.annotations.GenericGenerator;
 
 
@@ -47,8 +49,6 @@ public abstract class AbstractMember extends BaseEntity implements java.io.Seria
      private Integer sex;
      private Integer supportNum = 0;
      private Integer pushStatus;
-     private String code;
-     private Timestamp codeTime;
      private Timestamp lastAccessTime;
      private Set<Answer> answers = new HashSet<Answer>(0);
      private Set<Question> questions = new HashSet<Question>(0);
@@ -84,7 +84,6 @@ public abstract class AbstractMember extends BaseEntity implements java.io.Seria
         this.sex = sex;
         this.supportNum = supportNum;
         this.pushStatus = pushStatus;
-        this.codeTime = codeTime;
     }
     
     /** full constructor */
@@ -110,8 +109,6 @@ public abstract class AbstractMember extends BaseEntity implements java.io.Seria
         this.sex = sex;
         this.supportNum = supportNum;
         this.pushStatus = pushStatus;
-        this.code = code;
-        this.codeTime = codeTime;
         this.answers = answers;
         this.questions = questions;
         this.memberSmsHistories = memberSmsHistories;
@@ -351,25 +348,6 @@ public abstract class AbstractMember extends BaseEntity implements java.io.Seria
         this.pushStatus = pushStatus;
     }
     
-    @Column(name="code", length=6)
-
-    public String getCode() {
-        return this.code;
-    }
-    
-    public void setCode(String code) {
-        this.code = code;
-    }
-    
-    @Column(name="code_time", nullable=false, length=19)
-
-    public Timestamp getCodeTime() {
-        return this.codeTime;
-    }
-    
-    public void setCodeTime(Timestamp codeTime) {
-        this.codeTime = codeTime;
-    }
     @Column(name="last_access_time", nullable=false, length=19)
     public Timestamp getLastAccessTime() {
 		return lastAccessTime;

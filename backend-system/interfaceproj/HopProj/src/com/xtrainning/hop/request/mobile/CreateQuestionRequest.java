@@ -1,11 +1,13 @@
 package com.xtrainning.hop.request.mobile;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 
 
 public class CreateQuestionRequest extends MemberBaseRequest{
     @NotNull
+    @Pattern(regexp = "\\w{6,190}")
     private String name;
     private String description;
     private String newTopicName;
