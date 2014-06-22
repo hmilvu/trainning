@@ -1,11 +1,14 @@
 package com.xtrainning.hop.dao;
 
-import java.util.List;
-import org.hibernate.LockMode;
+import java.sql.SQLException;
+
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
-import static org.hibernate.criterion.Example.create;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
 
 import com.xtrainning.hop.entity.MemberSupportAnswer;
 
@@ -17,122 +20,46 @@ import com.xtrainning.hop.entity.MemberSupportAnswer;
 	 * @see com.xtrainning.hop.entity.hop.entity.MemberSupportAnswer
   * @author MyEclipse Persistence Tools 
  */
-
+@Repository
 public class MemberSupportAnswerDAO extends BaseHibernateDAO  {
 	     private static final Logger log = LoggerFactory.getLogger(MemberSupportAnswerDAO.class);
-	
-
     
     public void save(MemberSupportAnswer transientInstance) {
         log.debug("saving MemberSupportAnswer instance");
         try {
-            getSession().save(transientInstance);
+            getHibernateTemplate().save(transientInstance);
+            getHibernateTemplate().flush();
             log.debug("save successful");
         } catch (RuntimeException re) {
             log.error("save failed", re);
             throw re;
         }
     }
-    
-	public void delete(MemberSupportAnswer persistentInstance) {
-        log.debug("deleting MemberSupportAnswer instance");
-        try {
-            getSession().delete(persistentInstance);
-            log.debug("delete successful");
-        } catch (RuntimeException re) {
-            log.error("delete failed", re);
-            throw re;
-        }
-    }
-    
-    public MemberSupportAnswer findById( java.lang.Long id) {
-        log.debug("getting MemberSupportAnswer instance with id: " + id);
-        try {
-            MemberSupportAnswer instance = (MemberSupportAnswer) getSession()
-                    .get("com.hop.entity.MemberSupportAnswer", id);
-            return instance;
-        } catch (RuntimeException re) {
-            log.error("get failed", re);
-            throw re;
-        }
-    }
-    
-    
-    public List<MemberSupportAnswer> findByExample(MemberSupportAnswer instance) {
-        log.debug("finding MemberSupportAnswer instance by example");
-        try {
-            List<MemberSupportAnswer> results = (List<MemberSupportAnswer>) getSession()
-                    .createCriteria("com.hop.entity.MemberSupportAnswer")
-                    .add( create(instance) )
-            .list();
-            log.debug("find by example successful, result size: " + results.size());
-            return results;
-        } catch (RuntimeException re) {
-            log.error("find by example failed", re);
-            throw re;
-        }
-    }    
-    
-    public List findByProperty(String propertyName, Object value) {
-      log.debug("finding MemberSupportAnswer instance with property: " + propertyName
-            + ", value: " + value);
-      try {
-         String queryString = "from MemberSupportAnswer as model where model." 
-         						+ propertyName + "= ?";
-         Query queryObject = getSession().createQuery(queryString);
-		 queryObject.setParameter(0, value);
-		 return queryObject.list();
-      } catch (RuntimeException re) {
-         log.error("find by property name failed", re);
-         throw re;
-      }
+
+	public Integer deleteSupport(final Long memberId, final Long answerId) {
+		return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+			@Override
+			public Integer doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query q = session.createQuery("delete from MemberSupportAnswer where member.id = ? and answer.id = ?");
+				q.setLong(0, memberId);
+				q.setLong(1, answerId);
+				return q.executeUpdate();
+			}
+		});
 	}
 
-
-	public List findAll() {
-		log.debug("finding all MemberSupportAnswer instances");
-		try {
-			String queryString = "from MemberSupportAnswer";
-	         Query queryObject = getSession().createQuery(queryString);
-			 return queryObject.list();
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
+	public MemberSupportAnswer getSupport(final Long memberId, final Long answerId) {
+		return getHibernateTemplate().execute(new HibernateCallback<MemberSupportAnswer>() {
+			@Override
+			public MemberSupportAnswer doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query q = session.createQuery("from MemberSupportAnswer where member.id = ? and answer.id = ?");
+				q.setLong(0, memberId);
+				q.setLong(1, answerId);
+				q.setMaxResults(1);
+				return (MemberSupportAnswer) q.uniqueResult();
+			}
+		});
 	}
-	
-    public MemberSupportAnswer merge(MemberSupportAnswer detachedInstance) {
-        log.debug("merging MemberSupportAnswer instance");
-        try {
-            MemberSupportAnswer result = (MemberSupportAnswer) getSession()
-                    .merge(detachedInstance);
-            log.debug("merge successful");
-            return result;
-        } catch (RuntimeException re) {
-            log.error("merge failed", re);
-            throw re;
-        }
-    }
-
-    public void attachDirty(MemberSupportAnswer instance) {
-        log.debug("attaching dirty MemberSupportAnswer instance");
-        try {
-            getSession().saveOrUpdate(instance);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
-    
-    public void attachClean(MemberSupportAnswer instance) {
-        log.debug("attaching clean MemberSupportAnswer instance");
-        try {
-            getSession().lock(instance, LockMode.NONE);
-            log.debug("attach successful");
-        } catch (RuntimeException re) {
-            log.error("attach failed", re);
-            throw re;
-        }
-    }
 }

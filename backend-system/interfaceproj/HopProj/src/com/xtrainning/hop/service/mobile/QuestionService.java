@@ -4,23 +4,29 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.rop.annotation.HttpAction;
 import com.rop.annotation.NeedInSessionType;
 import com.rop.annotation.ServiceMethod;
 import com.rop.annotation.ServiceMethodBean;
 import com.rop.response.BusinessServiceErrorResponse;
 import com.xtrainning.hop.common.Constants;
+import com.xtrainning.hop.entity.Comment;
 import com.xtrainning.hop.entity.Member;
 import com.xtrainning.hop.entity.Question;
 import com.xtrainning.hop.entity.SysSession;
 import com.xtrainning.hop.request.mobile.CreateAnswerRequest;
+import com.xtrainning.hop.request.mobile.CreateCommentRequest;
 import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
+import com.xtrainning.hop.request.mobile.DeleteCommentRequest;
 import com.xtrainning.hop.request.mobile.GetAnswerListRequest;
+import com.xtrainning.hop.request.mobile.GetCommentListRequest;
 import com.xtrainning.hop.request.mobile.GetQuestionDetailRequest;
 import com.xtrainning.hop.resolver.MemberResolver;
 import com.xtrainning.hop.resolver.QuestionResolver;
 import com.xtrainning.hop.resolver.SysSessionResolver;
 import com.xtrainning.hop.resolver.TopicResolver;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
+import com.xtrainning.hop.response.mobile.CommentListResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
 import com.xtrainning.hop.response.mobile.SimpleResponse;
 
@@ -101,4 +107,35 @@ public class QuestionService extends MobileBaseService{
 		return new SimpleResponse();
 	}
 	
+	@ServiceMethod(method = "question.getCommentList",version = "1.0",needInSession = NeedInSessionType.NO)
+    public Object getCommentList(GetCommentListRequest request) {
+		CommentListResponse r = questionResolver.getCommentListResponse(request);
+		return r;
+	}
+	
+	@ServiceMethod(method = "question.deleteCommentList",version = "1.0",needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object getCommentList(DeleteCommentRequest request) {
+		SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
+		if(session.getMember().getId().longValue() != request.getMemberId()){
+			SimpleResponse response = new SimpleResponse();
+			response.setFlag(1);
+			response.setMsg("The memberId in request is not matched with the memberId in session.");
+			return response;
+		}
+		Comment c = questionResolver.getCommentById(request.getCommentId());
+		if(c.getMember().getId().longValue() != request.getMemberId()){
+			SimpleResponse response = new SimpleResponse();
+			response.setFlag(2);
+			response.setMsg("The comment is not created by the member. Can not delete.");
+			return response;
+		}
+		questionResolver.deleteComment(c);
+		return new SimpleResponse();
+	}
+	
+	@ServiceMethod(method = "question.createComment",version = "1.0",needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object createComment(CreateCommentRequest request) {
+		questionResolver.createComment(request);
+		return new SimpleResponse();
+	}
 }

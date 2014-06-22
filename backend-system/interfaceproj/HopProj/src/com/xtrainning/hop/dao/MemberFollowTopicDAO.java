@@ -51,4 +51,18 @@ public class MemberFollowTopicDAO extends BaseHibernateDAO  {
 			}
 		});
 	}
+
+	public void removeFollow(final Long memberId, final Long topicId) {
+		getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+			@Override
+			public Integer doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query q = session.createQuery("delete from MemberFollowTopic where member.id = ? and topic.id = ? ");
+				q.setLong(0, memberId);
+				q.setLong(1, topicId);
+				return q.executeUpdate();
+			}
+		});
+		
+	}
 }

@@ -20,11 +20,19 @@ import com.xtrainning.hop.common.Constants.PUSH_STATUS;
 import com.xtrainning.hop.common.Constants.SMS_TYPE;
 import com.xtrainning.hop.dao.MemberDAO;
 import com.xtrainning.hop.dao.MemberExpandDAO;
+import com.xtrainning.hop.dao.MemberFollowQuestionDAO;
 import com.xtrainning.hop.dao.MemberFollowTopicDAO;
 import com.xtrainning.hop.dao.MemberSmsHistoryDAO;
+import com.xtrainning.hop.dao.MemberSupportAnswerDAO;
+import com.xtrainning.hop.entity.Answer;
 import com.xtrainning.hop.entity.Member;
 import com.xtrainning.hop.entity.MemberExpand;
+import com.xtrainning.hop.entity.MemberFollowQuestion;
+import com.xtrainning.hop.entity.MemberFollowTopic;
 import com.xtrainning.hop.entity.MemberSmsHistory;
+import com.xtrainning.hop.entity.MemberSupportAnswer;
+import com.xtrainning.hop.entity.Question;
+import com.xtrainning.hop.entity.Topic;
 import com.xtrainning.hop.request.mobile.GetMemberIdRequest;
 import com.xtrainning.hop.request.mobile.SignUpRequest;
 import com.xtrainning.hop.request.mobile.ThirdLoginRequest;
@@ -37,6 +45,8 @@ public class MemberResolver extends BaseResolver{
 	@Autowired private ClientAppkeyResolver appKeyResolver;
 	@Autowired private MemberSmsHistoryDAO memberSmsHistoryDao;
 	@Autowired private MemberFollowTopicDAO memberFollowTopicDAO;
+	@Autowired private MemberFollowQuestionDAO memberFollowQuestionDAO;
+	@Autowired private MemberSupportAnswerDAO memberSupportAnswerDAO;
     @Cacheable(value="MemberResolver.getMemberByUUID")
 	public Member getMemberByUUID(String openuuid) {
 		MemberExpand memberExpand = memberExpandDao.getByOpenuuid(openuuid);
@@ -200,6 +210,65 @@ public class MemberResolver extends BaseResolver{
 		} else {
 			return MEMBER_TOPIC.NOT_FOLLOWED.getValue();
 		}
+	}
+
+	public void followTopic(Long memberId, Long topicId) {
+		memberFollowTopicDAO.removeFollow(memberId, topicId);
+		Member m = new Member();
+		m.setId(memberId);
+		
+		Topic t = new Topic();
+		t.setId(topicId);
+		MemberFollowTopic mft = new MemberFollowTopic();
+		mft.setMember(m);
+		mft.setTopic(t);
+		memberFollowTopicDAO.save(mft);
+		
+	}
+
+	public void unfollowTopic(Long memberId, Long topicId) {
+		memberFollowTopicDAO.removeFollow(memberId, topicId);
+	}
+
+	public void followQuestion(Long memberId, Long questionId) {
+		memberFollowQuestionDAO.removeFollow(memberId, questionId);
+		Member m = new Member();
+		m.setId(memberId);
+		
+		Question q = new Question();
+		q.setId(questionId);
+		MemberFollowQuestion mfq = new MemberFollowQuestion();
+		mfq.setMember(m);
+		mfq.setQuestion(q);
+		memberFollowQuestionDAO.save(mfq);
+	}
+
+	public void unfollowQuestion(Long memberId, Long questionId) {
+		memberFollowQuestionDAO.removeFollow(memberId, questionId);
+	}
+
+	public void supportAnswer(Long memberId, Long answerId, Integer status) {
+		MemberSupportAnswer oldMsa = memberSupportAnswerDAO.getSupport(memberId, answerId);
+		if(oldMsa == null){//表示用户从来没有赞或者踩过该答案，直接保存
+			saveMemberSupport(memberId, answerId, status);
+		} else {//表示用户曾经赞或者踩
+			memberSupportAnswerDAO.deleteSupport(memberId, answerId);//先删除曾经的历史
+			if(oldMsa.getStatus().intValue() != status.intValue()){//如果状态不一致，再保存
+				saveMemberSupport(memberId, answerId, status);
+			}
+		}
+	}
+
+	private void saveMemberSupport(Long memberId, Long answerId, Integer status) {
+		Member m = new Member();
+		m.setId(memberId);
+		Answer a = new Answer();
+		a.setId(answerId);
+		MemberSupportAnswer msa = new MemberSupportAnswer();
+		msa.setMember(m);
+		msa.setAnswer(a);
+		msa.setStatus(status);
+		memberSupportAnswerDAO.save(msa);
 	}
     
     

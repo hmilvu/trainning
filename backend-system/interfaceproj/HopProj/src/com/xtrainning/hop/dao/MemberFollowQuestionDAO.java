@@ -2,12 +2,16 @@ package com.xtrainning.hop.dao;
 
 import static org.hibernate.criterion.Example.create;
 
+import java.sql.SQLException;
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
 import com.xtrainning.hop.entity.MemberFollowQuestion;
@@ -35,6 +39,20 @@ public class MemberFollowQuestionDAO extends BaseHibernateDAO  {
             throw re;
         }
     }
+
+	public void removeFollow(final Long memberId, final Long questionId) {
+		getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+			@Override
+			public Integer doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query q = session.createQuery("delete from MemberFollowQuestion where member.id = ? and question.id = ? ");
+				q.setLong(0, memberId);
+				q.setLong(1, questionId);
+				return q.executeUpdate();
+			}
+		});
+		
+	}
 
 
 //    private static final String CHECK_MEMBER_FOLLOWED_QUESTION = "select count(*) from MemberFollowQuestion where question.id = ? and member.id = ? ";

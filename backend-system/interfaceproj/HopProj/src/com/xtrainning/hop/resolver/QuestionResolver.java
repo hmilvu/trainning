@@ -15,6 +15,7 @@ import com.xtrainning.hop.common.Constants.NEWS_STATUS;
 import com.xtrainning.hop.common.Constants.QUESTION_STATUS;
 import com.xtrainning.hop.common.Constants.TOPIC_STATUS;
 import com.xtrainning.hop.dao.AnswerDAO;
+import com.xtrainning.hop.dao.CommentDAO;
 import com.xtrainning.hop.dao.MemberFollowQuestionDAO;
 import com.xtrainning.hop.dao.MemberWarningDAO;
 import com.xtrainning.hop.dao.NewsDAO;
@@ -22,15 +23,20 @@ import com.xtrainning.hop.dao.QuestionDAO;
 import com.xtrainning.hop.dao.QuestionTopicDAO;
 import com.xtrainning.hop.dao.TopicDAO;
 import com.xtrainning.hop.entity.Answer;
+import com.xtrainning.hop.entity.Comment;
 import com.xtrainning.hop.entity.Member;
 import com.xtrainning.hop.entity.MemberFollowQuestion;
 import com.xtrainning.hop.entity.News;
 import com.xtrainning.hop.entity.Question;
 import com.xtrainning.hop.entity.QuestionTopic;
 import com.xtrainning.hop.entity.Topic;
+import com.xtrainning.hop.request.mobile.CreateCommentRequest;
 import com.xtrainning.hop.request.mobile.CreateQuestionRequest;
+import com.xtrainning.hop.request.mobile.GetCommentListRequest;
 import com.xtrainning.hop.response.mobile.AnswerListResponse;
 import com.xtrainning.hop.response.mobile.AnswerResponse;
+import com.xtrainning.hop.response.mobile.CommentListResponse;
+import com.xtrainning.hop.response.mobile.CommentResponse;
 import com.xtrainning.hop.response.mobile.QuestionDetailResponse;
 @Service
 public class QuestionResolver extends BaseResolver{
@@ -41,6 +47,7 @@ public class QuestionResolver extends BaseResolver{
 	@Autowired private NewsDAO newsDao;
 	@Autowired private MemberWarningDAO warninDao;
 	@Autowired private AnswerDAO answerDao;
+	@Autowired private CommentDAO commentDao;
 	public void createQuestion(CreateQuestionRequest request, Member member) {
 		Question q = new Question();
 		q.setName(request.getName());
@@ -146,6 +153,44 @@ public class QuestionResolver extends BaseResolver{
 
 	public Question getQuestionById(Long questionId) {
 		return questionDao.getById(questionId);
+	}
+
+	public CommentListResponse getCommentListResponse(GetCommentListRequest request) {
+		List<Comment> list = commentDao.getByQuestionId(request);
+		List<CommentResponse> rList = new ArrayList<CommentResponse>();
+		for(Comment c : list){
+			CommentResponse r = c.toResponse();
+			rList.add(r);
+		}
+		CommentListResponse response = new CommentListResponse();
+		response.setCommentList(rList);
+		return response;
+	}
+
+	public Comment getCommentById(Long commentId) {
+		return commentDao.getById(commentId);
+	}
+
+	public void deleteComment(Comment c) {
+		commentDao.delete(c);
+		
+	}
+
+	public void createComment(CreateCommentRequest request) {
+		Member m = new Member();
+		m.setId(request.getMemberId());
+		
+		Question q = new Question();
+		q.setId(request.getQuestionId());
+		
+		Comment c = new Comment();
+		c.setCreateTime(new Timestamp(new Date().getTime()));
+		c.setUpdateTime(c.getCreateTime());
+		c.setContent(request.getContent());
+		c.setMember(m);
+		c.setQuestion(q);
+		commentDao.save(c);
+		
 	}
 
 }

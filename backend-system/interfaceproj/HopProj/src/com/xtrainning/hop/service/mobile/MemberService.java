@@ -14,12 +14,15 @@ import com.xtrainning.hop.common.Constants.THIRD_PARTY_TYPE;
 import com.xtrainning.hop.entity.Member;
 import com.xtrainning.hop.entity.MemberSmsHistory;
 import com.xtrainning.hop.entity.SysSession;
+import com.xtrainning.hop.request.mobile.FollowQuestionRequest;
+import com.xtrainning.hop.request.mobile.FollowTopicRequest;
 import com.xtrainning.hop.request.mobile.GetMemberIdRequest;
 import com.xtrainning.hop.request.mobile.GetProfileRequest;
 import com.xtrainning.hop.request.mobile.GetVcodeRequest;
 import com.xtrainning.hop.request.mobile.LoginRequest;
 import com.xtrainning.hop.request.mobile.LogoffRequest;
 import com.xtrainning.hop.request.mobile.SignUpRequest;
+import com.xtrainning.hop.request.mobile.SupportAnswerRequest;
 import com.xtrainning.hop.request.mobile.ThirdLoginRequest;
 import com.xtrainning.hop.resolver.MemberResolver;
 import com.xtrainning.hop.resolver.SmsResolver;
@@ -152,13 +155,43 @@ public class MemberService extends MobileBaseService{
 	
 	@ServiceMethod(method = "member.getProfile",version = "1.0", needInSession = NeedInSessionType.YES)
     public Object getProfile(GetProfileRequest request) {	
-		SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
-		if(session.getMember().getId().longValue() != request.getMemberId()){
-			ProfileResponse response = new ProfileResponse();
-			return response;
-		}
+//		SysSession session = sessionResolver.getValidSessionBySessionId(request.getRopRequestContext().getSessionId());
+//		if(session.getMember().getId().longValue() != request.getMemberId()){
+//			ProfileResponse response = new ProfileResponse();
+//			return response;
+//		}
 		ProfileResponse response = memberResolver.getMemberProfile(request.getMemberId());
 		return response;
 	
+	}
+	
+	@ServiceMethod(method = "member.followTopic",version = "1.0", needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object followTopic(FollowTopicRequest request) {	
+		memberResolver.followTopic(request.getMemberId(), request.getTopicId());
+		return new SimpleResponse();
+	}
+	
+	@ServiceMethod(method = "member.unfollowTopic",version = "1.0", needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object unfollowTopic(FollowTopicRequest request) {	
+		memberResolver.unfollowTopic(request.getMemberId(), request.getTopicId());
+		return new SimpleResponse();
+	}
+	
+	@ServiceMethod(method = "member.followQuestion",version = "1.0", needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object followQuestion(FollowQuestionRequest request) {	
+		memberResolver.followQuestion(request.getMemberId(), request.getQuestionId());
+		return new SimpleResponse();
+	}
+	
+	@ServiceMethod(method = "member.unfollowTopic",version = "1.0", needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object unfollowQuestion(FollowQuestionRequest request) {	
+		memberResolver.unfollowQuestion(request.getMemberId(), request.getQuestionId());
+		return new SimpleResponse();
+	}
+	
+	@ServiceMethod(method = "member.supportAnswer",version = "1.0", needInSession = NeedInSessionType.YES, httpAction=HttpAction.POST)
+    public Object supportAnswer(SupportAnswerRequest request) {	
+		memberResolver.supportAnswer(request.getMemberId(), request.getAnswerId(), request.getStatus());
+		return new SimpleResponse();
 	}
 }

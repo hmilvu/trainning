@@ -1,7 +1,4 @@
 package com.xtrainning.hop.service.mobile;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.rop.annotation.NeedInSessionType;
@@ -10,18 +7,17 @@ import com.rop.annotation.ServiceMethodBean;
 import com.rop.response.BusinessServiceErrorResponse;
 import com.xtrainning.hop.common.Constants;
 import com.xtrainning.hop.entity.Topic;
-import com.xtrainning.hop.request.mobile.GetNewsListRequest;
 import com.xtrainning.hop.request.mobile.GetTopicDetailRequest;
 import com.xtrainning.hop.request.mobile.GetTopicListRequest;
+import com.xtrainning.hop.resolver.MemberResolver;
 import com.xtrainning.hop.resolver.TopicResolver;
-import com.xtrainning.hop.response.mobile.QuestionResponse;
 import com.xtrainning.hop.response.mobile.TopicListResponse;
 import com.xtrainning.hop.response.mobile.TopicResponse;
 
 @ServiceMethodBean
 public class TopicService extends MobileBaseService{
 	@Autowired private TopicResolver topicResolver;
-
+	@Autowired private MemberResolver memberResolver;
 	@ServiceMethod(method = "topic.getTopicList",version = "1.0",needInSession = NeedInSessionType.YES)
     public Object getTopicList(GetTopicListRequest request) {
 		TopicListResponse response = topicResolver.getTopicListReponse(checkPageInfo(request));
@@ -47,6 +43,8 @@ public class TopicService extends MobileBaseService{
         			request.getRopRequestContext().getLocale(), request.getTopicId());
 		}
 		TopicResponse response = topicResolver.getTopicReponse(t, checkPageInfo(request));
+		int followedFlag = memberResolver.checkMemberFollowTopicFlag(request.getMemberId(), request.getTopicId());
+		response.setFollowedFlag(followedFlag);
         return response;
 	}
 	

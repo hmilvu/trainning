@@ -26,7 +26,6 @@ public abstract class AbstractComment extends BaseEntity implements java.io.Seri
      private Question question;
      private String content;
      private Timestamp createTime;
-     private Integer status;
      private Timestamp updateTime;
 
 
@@ -42,7 +41,6 @@ public abstract class AbstractComment extends BaseEntity implements java.io.Seri
         this.member = member;
         this.content = content;
         this.createTime = createTime;
-        this.status = status;
         this.updateTime = updateTime;
     }
 
@@ -90,15 +88,6 @@ public abstract class AbstractComment extends BaseEntity implements java.io.Seri
         this.createTime = createTime;
     }
     
-    @Column(name="status", nullable=false)
-
-    public Integer getStatus() {
-        return this.status;
-    }
-    
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
     
     @Column(name="update_time", nullable=false, length=19)
 
