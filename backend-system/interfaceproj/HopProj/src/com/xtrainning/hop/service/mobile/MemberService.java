@@ -69,9 +69,9 @@ public class MemberService extends MobileBaseService{
 		}
 		
 		MemberSmsHistory msg = memberResolver.createVcode(request.getPhoneNumber());
-		r.setFlag(0);
-		r.setMsg("The phone number is already registered.");
 		smsResolver.sendVcode(msg);
+		r.setFlag(0);
+		r.setMsg(Constants.SUCCESS);
 		return r;
 	}
 	
